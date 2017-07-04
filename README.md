@@ -3,6 +3,9 @@
 ## Se crea un archivo llamado CNAME
 Se coloca el URL, en este caso: alexballera.com
 
+## Se configura el repositorio
+![Sin titulo](configuracion.png)
+
 ## Configuring A records with your DNS provider
 
 1. Confirm that you have added a custom domain to your GitHub Pages site.
