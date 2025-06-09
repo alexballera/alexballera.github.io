@@ -2,6 +2,7 @@
 import Social from "../ui/Social.astro";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const [staticData] = await getCollection('staticData');
 
@@ -9,22 +10,25 @@ if (!staticData) {
   throw new AstroError("JSON data not found");
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
 const menu = {
-  about: { name: "About Me", path: "/about-me" },
+  about: { name: t('nav.about'), path: "/about-me" },
   blog: { 
-    name: "Blog", 
+    name: t('nav.blog'), 
     path: "/blog/",
     dropdown: [
-      { name: "All Posts", path: "/blog/posts/" },
+      { name: t('blog.allPosts'), path: "/blog/posts/" },
     ]
   },
-  home: { name: "Home", path: "/#home" },
-  experience: { name: "Experience", path: "/#experience" },
-  projects: { name: "Projects", path: "/#projects" },
+  home: { name: t('nav.home'), path: "/#home" },
+  experience: { name: t('nav.experience'), path: "/#experience" },
+  projects: { name: t('nav.projects'), path: "/#projects" },
 };
 
 // Common base classes

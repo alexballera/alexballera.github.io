@@ -3,12 +3,16 @@ import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const [staticData] = await getCollection('staticData');
 
 if (!staticData) {
   throw new AstroError("JSON data not found");
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
@@ -33,7 +37,7 @@ if (!staticData) {
         href={staticData.data.github}
         class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
         aria-label="About the website development"
-        ><Icon name="code" aria-hidden="true" /> Developed by <strong>{staticData.data.alias}</strong>, with Astro</a
+        ><Icon name="code" aria-hidden="true" /> {t('footer.madeWith')} <strong>{staticData.data.alias}</strong>, {t('footer.by')} Astro</a
       >
     </div>
     <div class="flex items-center justify-center gap-5" role="list" aria-label="Social media links">

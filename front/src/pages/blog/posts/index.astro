@@ -3,6 +3,11 @@ import Layout from "../../../layouts/Layout.astro";
 import Hero from "../../../components/blog/Hero.astro";
 import Tags from "../../../components/blog/Tags.astro";
 import ListPosts from "../../../components/blog/ListPosts.astro";
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const pageTitle = "Web Development and Technology Blog | Fernando López | EFEELE";
 const description = "Welcome to my blog, where I share my passion for frontend development, web design, and the latest technology trends.";
 const ogimage = {
@@ -31,7 +36,7 @@ import Languages from "../../../components/blog/Languages.astro";
           class="bg-white dark:bg-transparent w-full mt-0 rounded-2xl dark:border-0 border border-neutral-100 top-14 px-6 pt-8 pb-12"
         >
           <div class="flex flex-col gap-4 pl-0">
-            <Heading textGradient="Categories" />
+            <Heading textGradient={t('blog.categories')} />
             <Tags variant="compact" />
           </div>
         </div>
@@ -40,7 +45,7 @@ import Languages from "../../../components/blog/Languages.astro";
           class="bg-white dark:bg-transparent w-full mt-8 rounded-2xl dark:border-0 border border-neutral-100 top-14 px-6 pt-8 pb-12"
         >
           <div class="flex flex-col gap-4 pl-0">
-            <Heading textGradient="Technologies" level={2} />
+            <Heading textGradient={t('blog.technologies')} level={2} />
             <Languages level={2} />
           </div>
         </div>

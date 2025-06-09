@@ -1,5 +1,16 @@
 ---
+import { getLangFromUrl } from '../../i18n/utils';
+
 const {date, class: className} = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+// Map language codes to locale strings
+const localeMap = {
+  es: 'es-ES',
+  en: 'en-US'
+};
+
+const locale = localeMap[lang] || 'en-US';
 ---
 
 <span
@@ -18,7 +29,7 @@ const {date, class: className} = Astro.props;
             clip-rule="evenodd"></path></svg
     >
     {
-        new Date(date).toLocaleDateString("en-US", {
+        new Date(date).toLocaleDateString(locale, {
             timeZone: "UTC", // Avoid timezone adjustments
             day: "numeric",
             month: "long",

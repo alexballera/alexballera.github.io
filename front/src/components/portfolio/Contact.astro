@@ -3,12 +3,16 @@ import Heading from "../ui/Heading.astro";
 import Button from "../ui/Button.astro";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const [staticData] = await getCollection('staticData');
 
 if (!staticData) {
   throw new AstroError("JSON data not found");
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section>
@@ -19,8 +23,8 @@ if (!staticData) {
       <div class="flex items-center justify-between max-sm:flex-col max-sm:gap-8 max-sm:text-center">
         <div class="max-w-lg">
           <Heading
-            text={staticData.data.contactSectionSubtitle}
-            textGradient={staticData.data.contactSectionSubtitle}
+            text={t('contact.title')}
+            textGradient={t('contact.title')}
             level={2}
           />
         </div>
@@ -30,7 +34,7 @@ if (!staticData) {
           <Button
             variant="big"
             link={`mailto:${staticData.data.email}`}
-            text={staticData.data.contactSectionButtonText}
+            text={t('contact.button')}
             iconName={staticData.data.contactSectionButtonIcon}
           />
         </div>

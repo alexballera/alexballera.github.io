@@ -2,6 +2,7 @@
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
+import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
 import { Icon } from "astro-icon/components";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
@@ -46,9 +47,10 @@ const navItems = isActiveRoute
         <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
         <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
       </div>
+      <LanguageSwitcher />
+      <ThemeIcon />
     </div>
     <div class="flex items-center gap-5 text-xl md:pl-5">
-      <ThemeIcon />
       <button 
         class="hamburger"
         aria-label="Open menu"

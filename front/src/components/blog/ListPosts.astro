@@ -1,6 +1,10 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // Prop to determine whether to exclude the latest post or a specific post
 export interface Props {
@@ -11,7 +15,8 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+const allPosts = await Astro.glob("../../pages/blog/posts/*.md") as any[];
+
 // Sort by date in descending order (newest first)
 allPosts.sort((a, b) => {
   const dateA = new Date(a.frontmatter.pubDate).getTime();
@@ -48,7 +53,7 @@ if (!all) {
   {
     all && (
       <div class="flex gap-4 pb-6 items-center text-center justify-center">
-        <Heading text="All" textGradient="Posts" level={2} />
+        <Heading text={t('blog.all')} textGradient={t('blog.posts')} level={2} />
       </div>
     )
   }
@@ -74,7 +79,7 @@ if (!all) {
           href="/blog/posts/"
           class="font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
         >
-          View all posts...
+          {t('blog.allPosts')}
         </a>
       </div>
     )

@@ -6,12 +6,16 @@ import { Icon } from "astro-icon/components";
 import Hobbies from "../portfolio/Hobbies.astro";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const [staticData] = await getCollection('staticData');
 
 if (!staticData) {
   throw new AstroError("JSON data not found");
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -57,7 +61,7 @@ if (!staticData) {
           <span
             class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"
           ></span>
-          Available for work
+          {t('hero.availableForWork')}
         </span>
 
         <h1
@@ -71,10 +75,8 @@ if (!staticData) {
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent   dark:from-riptide-300 dark:to-mint-200"
             >{staticData.data.profileTitle}</span
-          > with <span
-            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent  dark:from-riptide-300 dark:to-mint-200"
-            >8 years of experience</span
-          >, passionate about development, technology, and coffee that sparks ideas. I love bringing digital projects to life. 🚀☕
+          > {t('hero.subtitle')}
+          >, {t('hero.description')}
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center">
@@ -85,7 +87,7 @@ if (!staticData) {
           />
           <Button
             link={staticData.data.profileLink}
-            text="About Me"
+            text={t('hero.about')}
             iconName="person"
             variant="dark"
           />
@@ -100,7 +102,7 @@ if (!staticData) {
       class="col-start-2 row-start-2 flex flex-col gap-3 rounded-2xl border border-emerald-50 bg-linear-to-r from-riptide-200 to-mint-200 p-8 dark:border-zinc-800 dark:border-2 dark:bg-zinc-800 dark:bg-gradient-radial dark:from-riptide-500 dark:to-mint-500 max-md:gap-0 max-xl:p-5 max-md:p-4 max-lg:gap-1 md:col-start-4"
     >
       <div class="flex flex-col-reverse items-start gap-4 max-md:gap-2">
-        <Heading text="Beyond the Code" level={3} />
+        <Heading text={t('hero.beyondCode')} level={3} />
       </div>
 
       <div class="overflow-y-auto">
@@ -124,7 +126,7 @@ if (!staticData) {
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
             >
               <div class="z-2">
-                <Heading text="Do you like this site's design?" level={3}/>
+                <Heading text={t('hero.githubText')} level={3}/>
               </div>
 
               <Icon
@@ -150,7 +152,7 @@ if (!staticData) {
             name="dashboard"
             aria-hidden="true"
           />
-          <Heading text="Tech" textGradient="Stack" level={3} />
+          <Heading text={t('hero.tech')} textGradient={t('hero.stack')} level={3} />
         </div>
         <div class="overflow-y-auto">
           <Tools />
@@ -174,22 +176,22 @@ if (!staticData) {
             name="code"
             aria-hidden="true"
           />
-          <Heading text="Projects" level={3}/>
+          <Heading text={t('hero.projects')} level={3}/>
         </div>
         <p
           class="z-2 my-6 text-lg font-semibold leading-6 dark:text-gray-200 text-blacktext max-xl:text-base max-w-[90%] max-md:max-w-[85%]"
         >
-          I love <span
+          {t('hero.projectsDescription')} <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent  dark:from-riptide-300 dark:to-mint-200"
-            >turning ideas into real projects.</span
+            >{t('hero.projectsDescriptionHighlight1')}</span
           >
-          <br /> Here I show you some of the <span
+          <br /> {t('hero.projectsDescriptionPart2')} <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent  dark:from-riptide-300 dark:to-mint-200"
-            >developments</span
-          > I've worked on, applying technology, design, and lots of creativity.
+            >{t('hero.projectsDescriptionHighlight2')}</span
+          > {t('hero.projectsDescriptionPart3')}
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500  font-black  bg-clip-text text-transparent  dark:from-riptide-300 dark:to-mint-200"
-            >Check them out!</span
+            >{t('hero.projectsDescriptionHighlight3')}</span
           >
         </p>
         <img
