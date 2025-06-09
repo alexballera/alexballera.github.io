@@ -1,0 +1,47 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "Personal blog with Astro frontend and Strapi backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:front\" \"npm run dev:back\"",
+    "dev:front": "cd front && npm run dev",
+    "dev:back": "echo 'Backend not configured yet (Strapi pending)' && exit 0",
+    "dev:front-only": "cd front && npm run dev",
+    "build": "npm run build:front",
+    "build:front": "cd front && npm run build",
+    "build:back": "echo 'Backend build not configured yet'",
+    "preview": "cd front && npm run preview",
+    "start": "concurrently \"npm run start:front\" \"npm run start:back\"",
+    "start:front": "cd front && npm run preview",
+    "start:back": "echo 'Backend start not configured yet'",
+    "install:all": "npm install && cd front && npm install",
+    "setup": "npm run install:all && echo 'Project setup complete!'",
+    "clean": "rm -rf front/dist front/.astro node_modules front/node_modules",
+    "lint": "cd front && npm run astro check",
+    "type-check": "cd front && npm run astro check",
+    "postinstall": "echo 'Run npm run setup to install all dependencies'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexballera/my-blog.git"
+  },
+  "keywords": [],
+  "author": "Alex Ballera <alexballera@gmail.com> (http://alexballera.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexballera/my-blog/issues"
+  },
+  "homepage": "https://github.com/alexballera/my-blog#readme",
+  "workspaces": [
+    "front",
+    "back"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
