@@ -5,9 +5,13 @@ import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap"
 import icon from "astro-icon";
 
+// Configuración condicional para desarrollo vs producción
+const isProduction = process.env.NODE_ENV === 'production';
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://neonmint.efeele.dev",
+  site: isProduction ? "https://alexballera.github.io" : "http://localhost:4321",
+  base: isProduction ? "/my-blog" : "/",
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
