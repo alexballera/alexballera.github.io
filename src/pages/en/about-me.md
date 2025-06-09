@@ -8,13 +8,13 @@ image:
   alt: "Photo of Alex Ballera - Senior Frontend Developer"
 ---
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">👋 Who am I?</span>
+## 👋 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Who am I?</span>
 
 I'm **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, a goal-oriented Frontend Developer with over **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">5 years of experience</span>** creating scalable web systems for sectors like **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banking, tourism, healthcare, and government</span>**. I combine technical excellence with strategic vision to align every sprint with business results.
 
 I hold an **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">MBA (Master of Business Administration)</span>** and I'm currently studying a **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Data Science degree</span>** at the University of Buenos Aires (UBA), which allows me to have a comprehensive perspective on technological development and business strategy.
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🛠️ Tech Stack</span>
+## 🛠️ <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Tech Stack</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Frontend & Frameworks</span>
 - **JavaScript (ES6+) & TypeScript**: SOLID principles, functional programming, and performance optimization
@@ -34,7 +34,7 @@ I hold an **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-m
 - **CI/CD**: GitHub Actions, continuous integration and deployment
 - **Testing**: Jest, React Testing Library, Cypress for E2E testing
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">💼 Experience & Sectors</span>
+## 💼 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Experience & Sectors</span>
 
 I've worked developing scalable web solutions in various critical sectors:
 
@@ -49,13 +49,13 @@ I've worked developing scalable web solutions in various critical sectors:
 - **Mentoring**: Training and development of junior and mid-level developers
 - **Code Review**: Implementation of best practices and code standards
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🎓 Continuous Learning</span>
+## 🎓 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Continuous Learning</span>
 
 - **MBA (Master of Business Administration)** - Completed
 - **Data Science Degree** - University of Buenos Aires (UBA) - In progress
 - **Certifications**: Scrum Master, Angular, React, AWS Cloud Practitioner
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🚀 Projects & Innovation</span>
+## 🚀 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Projects & Innovation</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Architecture & Performance</span>
 - Design and implementation of scalable and reusable **Design Systems**
@@ -69,7 +69,7 @@ I've worked developing scalable web solutions in various critical sectors:
 - Constant experimentation with **new technologies** and emerging frameworks
 - Integration of **GitHub Copilot** and AI coding tools
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🌟 Development Philosophy</span>
+## 🌟 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Development Philosophy</span>
 
 My professional approach is based on fundamental principles that guide every project:
 
@@ -79,7 +79,7 @@ My professional approach is based on fundamental principles that guide every pro
 - **💼 Business impact**: Every line of code must contribute to business success
 - **⚡ Performance first**: Constant optimization of user experience
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">📊 Methodologies & Tools</span>
+## 📊 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Methodologies & Tools</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Agile Development</span>
 - **Scrum**: Planning, Daily Standups, Retrospectives, Sprint Reviews
@@ -92,7 +92,7 @@ My professional approach is based on fundamental principles that guide every pro
 - **Performance Testing**: Lighthouse, WebPageTest
 - **Code Quality**: ESLint, Prettier, SonarQube
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🎯 Current Goals</span>
+## 🎯 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Current Goals</span>
 
 I'm focused on projects that combine **technological innovation** with **social impact**:
 
@@ -101,7 +101,7 @@ I'm focused on projects that combine **technological innovation** with **social 
 - Contribution to open source projects and technological communities
 - Training and mentoring new talents in frontend development
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">📫 Let's Connect!</span>
+## 📫 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Let's Connect!</span>
 
 I'm passionate about sharing knowledge and collaborating on projects that generate **real impact**. If you have an interesting project or want to chat about technology, development, or digital strategy:
 
@@ -115,73 +115,3 @@ I'm passionate about sharing knowledge and collaborating on projects that genera
 > *"The best code is the one that solves real problems for real people"* - Alex Ballera
 
 Do you have a project in mind? Let's talk and create something incredible together! 🚀
-- **Angular & Angular Material**: Component architecture, Services, Microfrontend Architecture (single-spa), RxJS, Observables
-- **HTML5 & CSS3 (BEM, SASS, Responsive Design)**: Mobile-first approach with Flexbox and Grid
-
-### State Management & Data Flow
-- **Redux Toolkit (RTK)**: Efficient global state management
-- **React Query / TanStack Query**: Optimized server data handling
-- **RxJS**: Reactive programming with Observables
-- **Context API**: Local state management in React
-
-### Development Tools
-- **Git & GitHub**: Version control, branching methodologies (Git Flow, GitHub Flow)
-- **Docker**: Application containerization
-- **CI/CD**: GitHub Actions, continuous integration and deployment
-- **Testing**: Jest, React Testing Library, Cypress for E2E testing
-
-## 💼 Professional Experience
-
-### Senior Frontend Development
-I've worked across various sectors, creating scalable and optimized web solutions:
-
-- **Banking Sector**: Development of interfaces for financial applications with high security standards
-- **Tourism**: Booking platforms and travel management systems
-- **Government**: Public management systems and citizen portals
-- **Healthcare**: Hospital management applications and telemedicine platforms
-
-### Leadership & Agile Methodologies
-- **Certified Scrum Master**: Facilitating multidisciplinary teams
-- **Remote Work**: Experience leading distributed teams
-- **Mentoring**: Training junior and mid-level developers
-- **Code Review**: Implementation of best practices and coding standards
-
-## 🎓 Academic Background
-
-- **MBA** - In progress
-- **Data Science** - University of Buenos Aires (UBA) - In progress
-- **Certifications**: Scrum Master, Angular, React, AWS
-
-## 🚀 Projects & Contributions
-
-### Product Development
-- Creation of scalable design systems
-- Implementation of microfrontend architectures
-- Performance optimization (Core Web Vitals, Lighthouse)
-- Integration with REST and GraphQL APIs
-
-### Innovation & AI
-- Implementation of AI tools to boost team productivity
-- Automation of repetitive tasks with custom scripts
-- Experimentation with new technologies and frameworks
-
-## 🌟 Work Philosophy
-
-I firmly believe that technology should serve people and solve real problems. My approach is based on:
-
-- **Quality over quantity**: Clean, maintainable, and well-documented code
-- **Collaboration**: Teamwork and effective communication
-- **Continuous learning**: Always updated with the latest tech trends
-- **Business impact**: Every line of code should contribute to business success
-
-## 📫 Let's Connect
-
-I'm passionate about sharing knowledge and collaborating on innovative projects. If you have an interesting project or just want to chat about technology, don't hesitate to reach out.
-
-- **LinkedIn**: [Alex Ballera](https://linkedin.com/in/alexballera)
-- **GitHub**: [alexballera](https://github.com/alexballera)
-- **Email**: alex@alexballera.dev
-
----
-
-*"The best way to predict the future is to create it"* - Peter Drucker

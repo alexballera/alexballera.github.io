@@ -8,13 +8,13 @@ image:
   alt: "Foto de Alex Ballera - Desarrollador Frontend Senior"
 ---
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">👋 ¿Quién soy?</span>
+## 👋 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">¿Quién soy?</span>
 
 Soy **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, un desarrollador Frontend orientado a objetivos con más de **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">5 años de experiencia</span>** en la creación de sistemas web escalables para sectores como **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banca, turismo, salud y gobierno</span>**. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio.
 
 Cuento con un **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">MBA (Master of Business Administration)</span>** y actualmente estoy estudiando **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Licenciatura en Ciencias de Datos</span>** en la Universidad de Buenos Aires (UBA), lo que me permite tener una perspectiva integral del desarrollo tecnológico y la estrategia empresarial.
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🛠️ Stack Tecnológico</span>
+## 🛠️ <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Stack Tecnológico</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Frontend & Frameworks</span>
 - **JavaScript (ES6+) & TypeScript**: Principios SOLID, programación funcional y optimización de performance
@@ -34,7 +34,7 @@ Cuento con un **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:
 - **CI/CD**: GitHub Actions, integración y despliegue continuo
 - **Testing**: Jest, React Testing Library, Cypress para pruebas E2E
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">💼 Experiencia y Sectores</span>
+## 💼 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Experiencia y Sectores</span>
 
 He trabajado desarrollando soluciones web escalables en diversos sectores críticos:
 
@@ -49,13 +49,13 @@ He trabajado desarrollando soluciones web escalables en diversos sectores críti
 - **Mentoring**: Formación y desarrollo de desarrolladores junior y mid-level
 - **Code Review**: Implementación de buenas prácticas y estándares de código
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🎓 Formación Continua</span>
+## 🎓 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Formación Continua</span>
 
 - **MBA (Master of Business Administration)** - Completado
 - **Licenciatura en Ciencias de Datos** - Universidad de Buenos Aires (UBA) - En curso
 - **Certificaciones**: Scrum Master, Angular, React, AWS Cloud Practitioner
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🚀 Proyectos e Innovación</span>
+## 🚀 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Proyectos e Innovación</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Arquitectura y Performance</span>
 - Diseño e implementación de **Design Systems** escalables y reutilizables
@@ -69,7 +69,7 @@ He trabajado desarrollando soluciones web escalables en diversos sectores críti
 - Experimentación constante con **nuevas tecnologías** y frameworks emergentes
 - Integración de **GitHub Copilot** y herramientas de AI coding
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🌟 Filosofía de Desarrollo</span>
+## 🌟 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Filosofía de Desarrollo</span>
 
 Mi enfoque profesional se basa en principios fundamentales que guían cada proyecto:
 
@@ -79,7 +79,7 @@ Mi enfoque profesional se basa en principios fundamentales que guían cada proye
 - **💼 Impacto empresarial**: Cada línea de código debe contribuir al éxito del negocio
 - **⚡ Performance first**: Optimización constante de la experiencia del usuario
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">📊 Metodologías y Herramientas</span>
+## 📊 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Metodologías y Herramientas</span>
 
 ### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Desarrollo Ágil</span>
 - **Scrum**: Planning, Daily Standups, Retrospectives, Sprint Reviews
@@ -92,7 +92,7 @@ Mi enfoque profesional se basa en principios fundamentales que guían cada proye
 - **Performance Testing**: Lighthouse, WebPageTest
 - **Code Quality**: ESLint, Prettier, SonarQube
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">🎯 Objetivos Actuales</span>
+## 🎯 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Objetivos Actuales</span>
 
 Estoy enfocado en proyectos que combinen **innovación tecnológica** con **impacto social**:
 
@@ -101,7 +101,7 @@ Estoy enfocado en proyectos que combinen **innovación tecnológica** con **impa
 - Contribución a proyectos open source y comunidades tecnológicas
 - Formación y mentoring de nuevos talentos en desarrollo frontend
 
-## <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">📫 ¡Conectemos!</span>
+## 📫 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">¡Conectemos!</span>
 
 Me apasiona compartir conocimiento y colaborar en proyectos que generen **impacto real**. Si tienes un proyecto interesante o quieres charlar sobre tecnología, desarrollo o estrategia digital:
 
