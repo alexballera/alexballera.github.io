@@ -17,10 +17,6 @@ export const languages: Record<string, Language> = {
     name: "Bootstrap",
     iconName: "bootstrap",
   },
-  cloudflare: {
-    name: "Cloudflare",
-    iconName: "cloudflare",
-  },
   html: {
     name: "HTML 5",
     iconName: "html",
@@ -29,18 +25,9 @@ export const languages: Record<string, Language> = {
     name: "JavaScript",
     iconName: "javascript",
   },
-  mongo: {
-    name: "MongoDb",
-    iconName: "mongo",
-  },
-  mysql: {
-    name: "MySQL",
-    className: "bg-[#f6ece1]!",
-    iconName: "mysql",
-  },
-  wordpress: {
-    name: "Wordpress",
-    iconName: "wordpress",
+  nextjs: {
+    name: "Next.js",
+    iconName: "nextjs",
   },
   node: {
     name: "Node.js",
@@ -54,21 +41,21 @@ export const languages: Record<string, Language> = {
     name: "Figma",
     iconName: "figma",
   },
-  firebase: {
-    name: "Firebase",
-    iconName: "firebase",
-  },
   markdown: {
     name: "Markdown",
     iconName: "markdown",
   },
-  php: {
-    name: "PHP",
-    iconName: "php",
+  python: {
+    name: "Python",
+    iconName: "python",
   },
   sass: {
     name: "Sass",
     iconName: "sass",
+  },
+  sql: {
+    name: "SQL",
+    iconName: "sql",
   },
   ts: {
     name: "TypeScript",
@@ -86,10 +73,6 @@ export const languages: Record<string, Language> = {
     name: "Vercel",
     iconName: "vercel",
   },
-  netlify: {
-    name: "Netlify",
-    iconName: "netlify",
-  },
   gatsby: {
     name: "Gatsby",
     iconName: "gatsby",
@@ -106,9 +89,13 @@ export const languages: Record<string, Language> = {
     name: "DeepSeek",
     iconName: "deepseek",
   },
-  python: {
-    name: "Python",
-    iconName: "python",
+  copilot: {
+    name: "GitHub Copilot",
+    iconName: "copilot",
+  },
+  chatgpt: {
+    name: "ChatGPT",
+    iconName: "chatgpt",
   },
 };
 
