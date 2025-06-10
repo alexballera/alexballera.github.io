@@ -115,6 +115,11 @@ npm run preview
 
 ## 🔧 Configuración GitHub Pages
 
+### Estructura del Repositorio
+- **Rama Principal**: `master` (no `main`)
+- **Repositorio**: `alexballera/alexballera.github.io`
+- **Tipo**: Repositorio de usuario GitHub Pages
+
 ### Archivo CNAME
 ```
 alexballera.com
