@@ -18,7 +18,7 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
 };
 
 const menu = {
-  about: { name: t('nav.about'), path: "/about-me" },
+  about: { name: t('nav.about'), path: "/about-me/" },
   blog: { 
     name: t('nav.blog'), 
     path: "/blog/",
@@ -67,10 +67,18 @@ const baseClasses = {
     function updateActiveLink() {
       const currentPath = window.location.pathname;
       const currentHash = window.location.hash ? `#${window.location.hash.substring(1)}` : "";
+      
+      // Normalize paths by removing trailing slashes for comparison
+      const normalizedCurrentPath = currentPath.replace(/\/$/, '') || '/';
 
       document.querySelectorAll("nav a").forEach((link) => {
         const path = link.getAttribute("data-path");
-        toggleLinkClasses(link, path === currentPath || path === currentHash);
+        if (!path) return;
+        
+        const normalizedLinkPath = path.replace(/\/$/, '') || '/';
+        const isActive = normalizedLinkPath === normalizedCurrentPath || path === currentHash;
+        
+        toggleLinkClasses(link, isActive);
       });
     }
 

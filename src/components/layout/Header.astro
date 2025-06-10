@@ -14,14 +14,15 @@ if (!staticData) {
 }
 
 const currentPath = Astro.url.pathname;
-const routes = ["/", "/portfolio", "/about-me", ]; 
+// Normalize path by removing trailing slash for comparison (but keep "/" as is)
+const normalizedPath = currentPath === "/" ? "/" : currentPath.replace(/\/$/, '');
+const routes = ["/", "/about-me", "/blog"]; 
 
 // Check if the current route is in the list of routes
-const isActiveRoute = routes.includes(currentPath);
+const isActiveRoute = routes.includes(normalizedPath);
 
-const navItems = isActiveRoute 
-  ? ["home", "experience", "projects", "about", "blog",]
-  : ["home", "blog", "about"]; // Change the items
+// Always show all navigation items - remove conditional logic
+const navItems = ["home", "experience", "projects", "about", "blog"];
 ---
 
 <header
