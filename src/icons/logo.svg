@@ -1,11 +1,12 @@
-<svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simple geometric logo - A and B shapes -->
-  <!-- Letter A shape -->
-  <path d="M5 25 L10 10 L15 25 M7.5 20 L12.5 20" stroke="currentColor" stroke-width="2" fill="none"/>
-  <!-- Letter B shape with gradient -->
-  <path d="M25 10 L25 25 M25 10 L30 10 C32 10 33 11 33 13 C33 15 32 16 30 16 L25 16 M25 16 L31 16 C33 16 34 17 34 19 C34 21 33 22 31 22 L25 22" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+<svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Letter A - más grande y gruesa -->
+  <path d="M5 35 L20 5 L35 35 L28 35 L26 28 L14 28 L12 35 Z M17 18 L23 18 L20 12 Z" fill="currentColor"/>
+  
+  <!-- Letter B - más grande con gradiente -->
+  <path d="M45 5 L45 35 L65 35 C72 35 75 32 75 27 L75 24 C75 21 74 19 71 18 C74 17 75 14 75 11 L75 8 C75 3 72 5 65 5 Z M52 12 L62 12 C64 12 65 13 65 15 L65 16 C65 18 64 19 62 19 L52 19 Z M52 25 L63 25 C65 25 66 26 66 28 L66 29 C66 31 65 32 63 32 L52 32 Z" fill="url(#logoGradient)"/>
+  
   <defs>
-    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#14b8a6"/>
       <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>

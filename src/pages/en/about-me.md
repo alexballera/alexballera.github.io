@@ -105,10 +105,9 @@ I'm focused on projects that combine **technological innovation** with **social 
 
 I'm passionate about sharing knowledge and collaborating on projects that generate **real impact**. If you have an interesting project or want to chat about technology, development, or digital strategy:
 
-- **💼 LinkedIn**: [Alex Ballera](https://linkedin.com/in/alexballera)
-- **💻 GitHub**: [alexballera](https://github.com/alexballera)
-- **📧 Email**: alex@alexballera.dev
-- **🌐 Portfolio**: [alexballera.dev](https://alexballera.dev)
+- **💼 LinkedIn**: <a href="https://linkedin.com/in/alexballera" target="_blank">Alex Ballera</a>
+- **💻 GitHub**: <a href="https://github.com/alexballera" target="_blank">alexballera</a>
+- **📊 Kaggle**: <a href="https://www.kaggle.com/alexballera" target="_blank">alexballera</a>
 
 ---
 
