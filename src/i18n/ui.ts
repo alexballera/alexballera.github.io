@@ -13,7 +13,7 @@ export const ui = {
     'nav.portfolio': 'Portfolio',
     'nav.contact': 'Contacto',
     'nav.experience': 'Experiencia',
-    'nav.projects': 'Proyectos',
+    'nav.projects': 'Portfolio',
     
     // Hero section
     'hero.greeting': 'Hola, soy',
@@ -111,7 +111,7 @@ export const ui = {
     'nav.portfolio': 'Portfolio',
     'nav.contact': 'Contact',
     'nav.experience': 'Experience',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Portfolio',
     
     // Hero section
     'hero.greeting': 'Hi, I\'m',
