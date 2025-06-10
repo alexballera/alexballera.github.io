@@ -13,14 +13,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
-      header.classList.add("scroll-m-28");
-    });
-  });
-</script>
-
 <Layout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
@@ -110,3 +102,11 @@ const t = useTranslations(lang);
   </section>
   <Contact />
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
+      header.classList.add("scroll-m-28");
+    });
+  });
+</script>
