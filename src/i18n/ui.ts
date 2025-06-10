@@ -18,7 +18,7 @@ export const ui = {
     // Hero section
     'hero.greeting': 'Hola, soy',
     'hero.title': 'Desarrollador Frontend',
-    'hero.subtitle': 'con 8 años de experiencia',
+    'hero.subtitle': 'con 6 años de experiencia',
     'hero.description': 'Apasionado por el desarrollo, la tecnología y el café que enciende las ideas. Me encanta dar vida a proyectos digitales.',
     'hero.contact': 'Contactar',
     'hero.resume': 'Ver CV',
@@ -32,7 +32,7 @@ export const ui = {
     'about.technological': 'Tecnológico',
     'about.jobTitle': 'Desarrollador Frontend Senior',
     'about.withExperience': 'con más de',
-    'about.yearsExperience': '5 años de experiencia',
+    'about.yearsExperience': '6 años de experiencia',
     'about.description': 'apasionado por el desarrollo, la tecnología y el café que enciende las ideas. Me encanta dar vida a proyectos digitales. 🚀☕',
     
     // Blog section
@@ -116,7 +116,7 @@ export const ui = {
     // Hero section
     'hero.greeting': 'Hi, I\'m',
     'hero.title': 'Frontend Developer',
-    'hero.subtitle': 'with 8 years of experience',
+    'hero.subtitle': 'with 6 years of experience',
     'hero.description': 'Passionate about development, technology, and coffee that sparks ideas. I love bringing digital projects to life.',
     'hero.contact': 'Contact',
     'hero.resume': 'View Resume',
@@ -130,7 +130,7 @@ export const ui = {
     'about.technological': 'Stack',
     'about.jobTitle': 'Senior Frontend Developer',
     'about.withExperience': 'with over',
-    'about.yearsExperience': '5 years of experience',
+    'about.yearsExperience': '6 years of experience',
     'about.description': 'passionate about development, technology, and coffee that sparks ideas. I love bringing digital projects to life. 🚀☕',
     
     // Blog section

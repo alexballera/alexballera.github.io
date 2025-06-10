@@ -1,7 +1,7 @@
 ---
 layout: /src/layouts/MarkdownAbout.astro
 title: "Alex Ballera | Desarrollador Frontend Senior · MBA · Estudiante de Licenciatura en Ciencias de Datos"
-description: "Desarrollador Frontend orientado a objetivos con más de 5 años de experiencia. MBA y estudiante de Licenciatura en Ciencias de Datos en UBA. 🚀☕"
+description: "Desarrollador Frontend orientado a objetivos con más de 6 años de experiencia. MBA y estudiante de Licenciatura en Ciencias de Datos en UBA. 🚀☕"
 author: "Alex Ballera"
 image:
   url: "/images/alexprofile.webp"
@@ -10,7 +10,7 @@ image:
 
 ## 👋 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">¿Quién soy?</span>
 
-Soy **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, un desarrollador Frontend orientado a objetivos con más de **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">5 años de experiencia</span>** en la creación de sistemas web escalables para sectores como **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banca, turismo, salud y gobierno</span>**. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio.
+Soy **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, un desarrollador Frontend orientado a objetivos con más de **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">6 años de experiencia</span>** en la creación de sistemas web escalables para sectores como **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banca, turismo, salud y gobierno</span>**. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio.
 
 Cuento con un **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">MBA (Master of Business Administration)</span>** y actualmente estoy estudiando **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Licenciatura en Ciencias de Datos</span>** en la Universidad de Buenos Aires (UBA), lo que me permite tener una perspectiva integral del desarrollo tecnológico y la estrategia empresarial.
 

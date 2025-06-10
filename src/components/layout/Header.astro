@@ -45,8 +45,15 @@ const navItems = ["home", "experience", "projects", "about", "blog"];
 
     <div class="flex items-center justify-between gap-5 text-xl">
       <div class="max-md:hidden flex items-center justify-center gap-5" role="list">
-        <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
-        <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+        {staticData.data.linkedin && staticData.data.linkedinIconName && (
+          <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+        )}
+        {staticData.data.github && staticData.data.githubIconName && (
+          <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
+        )}
+        {staticData.data.kaggle && staticData.data.kaggleIconName && (
+          <Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} />
+        )}
       </div>
       <LanguageSwitcher />
       <ThemeIcon />

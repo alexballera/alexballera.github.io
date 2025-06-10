@@ -1,7 +1,7 @@
 ---
 layout: /src/layouts/MarkdownAbout.astro
 title: "Alex Ballera | Senior Frontend Developer · MBA · Data Science Degree Student"
-description: "Goal-oriented Frontend Developer with 5+ years of experience. MBA graduate and Data Science degree student at UBA. 🚀☕"
+description: "Goal-oriented Frontend Developer with 6+ years of experience. MBA graduate and Data Science degree student at UBA. 🚀☕"
 author: "Alex Ballera"
 image:
   url: "/images/alexprofile.webp"
@@ -10,7 +10,7 @@ image:
 
 ## 👋 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Who am I?</span>
 
-I'm **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, a goal-oriented Frontend Developer with over **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">5 years of experience</span>** creating scalable web systems for sectors like **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banking, tourism, healthcare, and government</span>**. I combine technical excellence with strategic vision to align every sprint with business results.
+I'm **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Alex Ballera</span>**, a goal-oriented Frontend Developer with over **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">6 years of experience</span>** creating scalable web systems for sectors like **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">banking, tourism, healthcare, and government</span>**. I combine technical excellence with strategic vision to align every sprint with business results.
 
 I hold an **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">MBA (Master of Business Administration)</span>** and I'm currently studying a **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Data Science degree</span>** at the University of Buenos Aires (UBA), which allows me to have a comprehensive perspective on technological development and business strategy.
 

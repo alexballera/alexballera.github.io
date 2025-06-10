@@ -174,7 +174,14 @@ const baseClasses = {
     role="group"
     aria-label="Social Media Links"
   >
-    <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
-    <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+    {staticData.data.linkedin && staticData.data.linkedinIconName && (
+      <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+    )}
+    {staticData.data.github && staticData.data.githubIconName && (
+      <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
+    )}
+    {staticData.data.kaggle && staticData.data.kaggleIconName && (
+      <Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} />
+    )}
   </div>
 </nav>

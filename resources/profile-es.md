@@ -6,7 +6,7 @@
 
 ## 👋 Resumen Ejecutivo
 
-Desarrollador Frontend orientado a objetivos con más de 5 años de experiencia en la creación de sistemas web escalables para sectores como banca, turismo y gobierno. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio. Experto en metodologías ágiles, patrones de diseño y optimización de performance. Trabajo de forma remota, liderando equipos multidisciplinarios y aplicando inteligencia artificial para maximizar productividad y calidad de código.
+Desarrollador Frontend orientado a objetivos con más de 6 años de experiencia en la creación de sistemas web escalables para sectores como banca, turismo y gobierno. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio. Experto en metodologías ágiles, patrones de diseño y optimización de performance. Trabajo de forma remota, liderando equipos multidisciplinarios y aplicando inteligencia artificial para maximizar productividad y calidad de código.
 
 ---
 

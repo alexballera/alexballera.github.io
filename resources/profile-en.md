@@ -6,7 +6,7 @@
 
 ## 👋 Executive Summary
 
-Results-driven Frontend Developer with over 5 years of experience building scalable web applications for banking, healthcare, government, and tourism sectors. I combine technical excellence with strategic thinking to align every sprint with business goals. Agile advocate, performance optimizer, and UI/UX collaborator. I lead remote teams, ship high-quality code, and leverage AI tools to boost developer productivity and software reliability.
+Results-driven Frontend Developer with over 6 years of experience building scalable web applications for banking, healthcare, government, and tourism sectors. I combine technical excellence with strategic thinking to align every sprint with business goals. Agile advocate, performance optimizer, and UI/UX collaborator. I lead remote teams, ship high-quality code, and leverage AI tools to boost developer productivity and software reliability.
 
 ---
 

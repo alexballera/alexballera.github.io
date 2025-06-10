@@ -4,7 +4,7 @@
 
 ## 🎯 Acerca del Sitio
 
-Portafolio personal de **Alex Ballera**, Senior Frontend Developer con más de 5 años de experiencia en desarrollo web. Sitio construido con Astro y personalizado con información profesional, proyectos destacados y contenido técnico.
+Portafolio personal de **Alex Ballera**, Senior Frontend Developer con más de 6 años de experiencia en desarrollo web. Sitio construido con Astro y personalizado con información profesional, proyectos destacados y contenido técnico.
 
 ## 👨‍💻 Sobre Alex Ballera
 
