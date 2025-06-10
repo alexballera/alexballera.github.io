@@ -132,10 +132,21 @@ alexballera.com
 - Dominio personalizado configurado
 
 ### DNS Records
-Para configurar el dominio personalizado, se requieren estos registros A:
+Para configurar el dominio personalizado, se requieren estos registros:
+
+**Registros A (dominio apex):**
 ```
-192.30.252.153
-192.30.252.154
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+**Registro CNAME (subdominio www):**
+```
+Tipo: CNAME
+Nombre: www
+Valor: alexballera.github.io
 ```
 
 ## 📬 Contacto
