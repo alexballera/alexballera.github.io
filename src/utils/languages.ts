@@ -29,6 +29,10 @@ export const languages: Record<string, Language> = {
     name: "Next.js",
     iconName: "nextjs",
   },
+  react: {
+    name: "React",
+    iconName: "react",
+  },
   node: {
     name: "Node.js",
     iconName: "node",
@@ -48,6 +52,7 @@ export const languages: Record<string, Language> = {
   python: {
     name: "Python",
     iconName: "python",
+    className: "bg-white dark:bg-zinc-800" // Ensure proper background for contrast
   },
   sass: {
     name: "Sass",

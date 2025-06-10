@@ -3,6 +3,7 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
 import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
+import Logo from "../ui/Logo.astro";
 import { Icon } from "astro-icon/components";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
@@ -33,13 +34,7 @@ const navItems = ["home", "experience", "projects", "about", "blog"];
   <div
     class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6"
   >
-    <a href="/" aria-label="Go to home">
-      <Icon
-        name="logo"
-        class="h-10 cursor-pointer transition-all hover:text-mint-300"
-        aria-hidden="true"
-      />
-    </a>
+    <Logo />
 
     <Navigation items={navItems} />
 

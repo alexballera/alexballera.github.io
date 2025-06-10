@@ -23,8 +23,9 @@ const baseClasses = {
   iconContainer: [
     "flex items-center justify-center",
     "aspect-square",
-    "bg-zinc-800 dark:bg-zinc-700 rounded-full p-1",
+    "bg-white dark:bg-zinc-800 rounded-full p-1",
     "transition-all duration-300 ease-in-out",
+    "border border-zinc-200 dark:border-zinc-700",
   ].join(" "),
 };
 
@@ -47,7 +48,7 @@ const getIconContainerClasses = () => {
 };
 
 const getIconClasses = () => {
-  return "w-full! text-white transition-colors duration-300 ease-in-out";
+  return "w-full! transition-colors duration-300 ease-in-out";
 };
 ---
 
