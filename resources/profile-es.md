@@ -1,174 +1,166 @@
 # Alex Ballera
 
-**Senior Frontend Developer · MBA · Estudiante de Ciencias de Datos (UBA)**
+**Senior Frontend Developer · MBA · Estratega Digital con visión de negocio · Estudiante de Ciencias de Datos (UBA)**
 
 ---
 
 ## 👋 Resumen Ejecutivo
 
-Desarrollador Frontend orientado a objetivos con más de 6 años de experiencia en la creación de sistemas web escalables para sectores como banca, turismo y gobierno. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio. Experto en metodologías ágiles, patrones de diseño y optimización de performance. Trabajo de forma remota, liderando equipos multidisciplinarios y aplicando inteligencia artificial para maximizar productividad y calidad de código.
+Desarrollador Frontend orientado a objetivos con más de 5 años de experiencia en la creación de sistemas web escalables para sectores como banca, tecnología, educación y gobierno. Combino excelencia técnica con visión estratégica para alinear cada sprint con los resultados de negocio. Experto en metodologías ágiles, patrones de diseño y optimización de performance. Trabajo de forma remota, liderando equipos multidisciplinarios y aplicando inteligencia artificial para maximizar productividad y calidad de código.
+
+Capacidad comprobada para liderar desde la tecnología y desde el negocio. Con background en planificación estratégica, análisis financiero, desarrollo comercial y puesta en marcha de unidades operativas, integro visión empresarial con ejecución técnica de alto nivel.
 
 ---
 
-## 🛠️ Competencias Clave
+## 🧠 Aptitudes Técnicas y Estratégicas
 
-- **Lenguajes y Frameworks**  
-  - **JavaScript (ES6+) & TypeScript**: Principios SOLID, programación funcional y optimización de performance.  
-  - **Next.js & React**: Server-Side Rendering (SSR), Static-Site Generation (SSG), React Hooks, Context API, Redux Toolkit (RTK).  
-  - **Angular & Angular Material**: Componentes, Servicios, Arquitectura Microfrontend (single-spa), RxJS, Observables.  
-  - **HTML5 & CSS3 (BEM, SASS, Responsive Design)**: Flexbox, Grid, diseño mobile-first.
+### Frontend Engineering  
+- JavaScript (ES6+), TypeScript, HTML5, CSS3 (BEM, SASS)  
+- Angular, React, Next.js  
+- Redux Toolkit, RxJS, WebSockets  
+- Microfrontends (single-spa), SSR, SSG, Webpack  
+- Material UI, Angular Material, Responsive Design  
+- Jest, Jasmine, Karma, Cucumber  
+- APIs RESTful, OAuth2, JWT, Node.js, Express  
+- GitHub Actions, CI/CD, Vercel, Netlify
 
-- **Gestión de Estado y Flujo de Datos**  
-  - **Redux Toolkit (RTK)**: Slices, createAsyncThunk, Middleware.  
-  - **RxJS**: Streams, operadores y manejo de data asíncrona compleja.
+### Dirección Estratégica y de Negocios  
+- Planificación estratégica · Gestión empresarial · Corporate Finance  
+- Lanzamiento de Startups · Project Finance · Forecasting  
+- Business Development · Liderazgo de equipos interdisciplinarios
 
-- **Microfrontends & Arquitectura**  
-  - **single-spa**: División de aplicaciones por dominios de negocio, despliegues independientes y escalabilidad.  
-  - **Webpack & Module Federation**: Carga dinámica de microfrontends y optimización de bundles.
+### Marketing & Branding  
+- Estrategia de mercadotecnia · Valor de marca · Posicionamiento  
+- Investigación de mercado · Branding · Propuestas de valor
 
-- **Backend & APIs**  
-  - **APIs RESTful**: Diseño de endpoints, autenticación, pruebas (Postman).  
-  - **Node.js & Express**: Endpoints ligeros para prototipos y pruebas de concepto.
-
-- **Herramientas y DevOps**  
-  - **Git & GitHub**: Branching strategies, Pull Requests, Code Reviews y flujos colaborativos.  
-  - **CI/CD Básico**: Deploys automáticos a entornos de staging y producción (GitHub Actions, Netlify, Vercel).  
-  - **Docker (conceptual)**: Contenerización de servicios para desarrollo local replicable.
-
-- **Metodologías & Mejores Prácticas**  
-  - **Agile / Scrum / Kanban**: Planificación de sprints, retrospectives, KPIs y backlog grooming.  
-  - **Clean Code & Testing**: TDD básico con Jest, pruebas unitarias e integración en Angular (Jasmine/Karma).  
-  - **Inteligencia Artificial para Productividad**: Uso de agentes conversacionales para revisión de código, generación de tests y búsqueda de soluciones óptimas.
+### Análisis y Toma de Decisiones  
+- Business Analysis · Investment Analysis · Data Analysis  
+- Market Research · KPIs · Modelado de negocios
 
 ---
 
 ## 🚀 Proyectos Destacados
 
-> Aplicaciones estratégicas desarrolladas para entidades financieras, diseñadas para optimizar la experiencia de usuario y garantizar alta disponibilidad.
-
-1. **Comafi App Interna (Next.js)**  
-   - **Descripción**: Portal interno para Banco COMAFI orientado a la gestión de operaciones bancarias internas.  
-   - **Arquitectura**:  
-     - **Framework**: Next.js (SSR/SSG)  
-     - **Estados**: Redux Toolkit (RTK) y Context API para segmentar datos sensibles del backend.  
-     - **UI/UX**: Material UI con temas personalizados para alineación a branding.  
-     - **Optimización**: Carga incremental de componentes, lazy loading y división de código.  
-   - **Responsabilidades**:  
-     - Definición de la arquitectura Frontend junto a líderes técnicos y Product Owners.  
-     - Implementación de microfrontends para separar módulos críticos (autenticación, reportes, administración).  
-     - Coordinación de despliegues automáticos en Vercel y pipelines de PR/CICD en GitHub Actions.  
-     - Supervisión de code reviews, estándares de calidad y pruebas automatizadas (Jest).  
-
-2. **Banco ICBC – App de Banca Digital (Angular + Microfrontend)**  
-   - **Descripción**: Aplicación de banca digital para usuarios finales de Banco ICBC, con módulos de consulta de saldo, transferencias y notificaciones en tiempo real.  
-   - **Arquitectura**:  
-     - **Framework**: Angular (v12+) con Angular Material  
-     - **Microfrontend**: single-spa para separar frontend de transferencias, perfil de usuario y notificaciones push.  
-     - **Estado**: Servicios RxJS para suscripción a streams de datos en tiempo real.  
-     - **Performance**: Módulos lazy loaded, manejo de Web Workers para procesamiento de datos en background.  
-   - **Responsabilidades**:  
-     - Desarrollo de módulos clave: Dashboard de usuario, Transferencias inmediatas y Billetera virtual.  
-     - Implementación de test coverage al 85% con Jasmine/Karma.  
-     - Colaboración con el equipo de backend para diseñar contratos de API y mecanismos de autenticación OAuth2.  
-     - Asegurar accesibilidad (WCAG 2.1) y performance (Lighthouse > 90).
-
-3. **YOY App (Angular)**  
-   - **Descripción**: Plataforma interna para gestión de métricas operativas y reportes en tiempo real para Banco ICBC y otros clientes corporativos.  
-   - **Arquitectura**:  
-     - **Framework**: Angular (v10), Bootstrap 4 adaptado a SASS.  
-     - **Data Visualization**: Recharts para gráficas dinámicas y D3.js para análisis estadísticos.  
-     - **APIs**: Consumo de microservicios RESTful en Node.js.  
-   - **Responsabilidades**:  
-     - Diseño de dashboards interactivas para mostrar KPIs clave (volúmenes de transacción, tiempos de respuesta).  
-     - Integración de sockets WebSocket para actualizaciones en vivo.  
-     - Implementación del sistema de autenticación basada en JWT y roles por perfil de usuario.  
-     - Coordinación de despliegues en entornos QA y Production con Netlify y scripts de shell personalizados.  
+### 1. **Comafi App Interna (Next.js)**  
+- Plataforma de uso interno para la gestión operativa del Banco COMAFI.  
+- Arquitectura con Next.js, SSR, microfrontends, RTK, CI/CD y Vercel.  
+- **Skills**: Next.js · Redux Toolkit · Material UI · single-spa · GitHub Actions · Jest
 
 ---
 
-## 💼 Experiencia Profesional (desde 2019)
+### 2. **YOY App (Angular)**  
+- App de banca digital con QR, tarjetas virtuales, recargas, beneficios y métricas en tiempo real.  
+- Seguridad biométrica, autenticación JWT, WebSocket y visualización de KPIs.  
+- **Skills**: Angular · RxJS · WebSockets · Bootstrap/SASS · JWT · Node.js APIs
+
+---
+
+### 3. **Ticmas – Plataforma Educativa (React + Next.js)**  
+- Plataforma edtech para contenidos STEAM, docentes y estudiantes.  
+- Migración legacy a SSR con Next.js, CMS y optimización de rendimiento.  
+- **Skills**: React · Next.js · SSR · Accesibilidad · Performance tuning · CMS
+
+---
+
+### 4. **Droptek – Desarrollo de Interfaces Frontend (React & React Native)**  
+- Proyecto vinculado a la digitalización de procesos internos para el Banco COMAFI, sobre una arquitectura serverless construida por el equipo backend.  
+- Fui responsable del diseño, maquetado e implementación de interfaces web y móviles reutilizables, priorizando performance, consistencia visual y adaptabilidad.  
+- Colaboré con diseñadores UX/UI y arquitectos cloud para integrar las vistas del usuario con servicios asincrónicos en tiempo real.  
+- **Skills**: React · React Native · JavaScript · HTML5 · CSS3 · Responsive Design · UX/UI · Arquitectura basada en componentes
+
+
+---
+
+## 🧭 Proyectos Estratégicos (pre-2019)
+
+### ▪ Empresa Mixta Industria Automotores y Servicios de Aragua, S.A.  
+- Plan de negocios y modelo de postventa para marca Chery.  
+- **Skills**: Business Planning · Financial Management · Market Analysis
+
+### ▪ Industria Tecnológica ARAWAK, S.A.  
+- Desarrollo y puesta en marcha de empresa para fabricación de UPS, reguladores y computadoras.  
+- **Skills**: Startup Launch · Strategic Planning · Product Strategy
+
+### ▪ Estudio de Valor de Marca – LOCATEL  
+- Diagnóstico del valor de marca y desarrollo de estrategia de branding.  
+- **Skills**: Branding · Market Research · Business Analysis
+
+### ▪ ABES – Unidad de Beneficios Sociales (IPSFA)  
+- Sistema fintech de monedero electrónico para beneficios no salariales.  
+- **Skills**: Entrepreneurial Finance · Project Management · Digital Payments
+
+---
+
+## 💼 Experiencia Profesional
 
 ### **Tech Lead / Senior Frontend Developer**  
-**Boreal Technologies – Banco COMAFI (Remote / Buenos Aires)**  
-_Junio 2022 – Enero 2025_  
-- Lideré el equipo Frontend como referente técnico, definiendo estándares de arquitectura, flujos de trabajo y roadmap de sprint.  
-- Diseñé e implementé la **Comafi App Interna (Next.js)**—aplicación de uso exclusivo corporativo—garantizando escalabilidad y adaptabilidad a nuevas funcionalidades.  
-- Coordiné la planificación de sprints, asignación de tareas y coordinación interdisciplinaria con Backend, UX/UI y QA.  
-- Introduje prácticas de **Code Review**, **pair programming** y uso de **IA para optimización de calidad de código**.  
-- Supervisé la migración de monolitos Angular v8 a microfrontends con single-spa, reduciendo tiempos de despliegue en un 40 %.  
-- Implementé pipelines de CI/CD en GitHub Actions, logrando un ciclo de entrega continua y reducción de “time-to-market” en un 30 %.  
-
-### **Frontend Developer**  
-**OMNi Costa Rica – Banco Vertical Salud (Costa Rica)**  
-_Julio 2021 – Junio 2022_  
-- Desarrollo completo de la **plataforma de servicios de salud bancaria**, colaborando en la definición de casos de uso y user stories.  
-- Utilicé **React & Next.js** para construir módulos independientes de consultas médicas, pagos y citas en línea.  
-- Apliqué **responsive design** y **mobile-first**, asegurando una experiencia uniforme en dispositivos móviles y desktop.  
-- Coordiné reuniones con Product Owners para establecer entregables y criterios de aceptación.  
-
-### **Frontend Developer**  
-**G&L Group – Banco ICBC (Buenos Aires)**  
-_Agosto 2020 – Diciembre 2021_  
-- Responsable del desarrollo y optimización de la **App de Banca Digital** para Banco ICBC.  
-- Implementé arquitectura **microfrontend** con **single-spa**, separando módulos de usuario, transferencias y notificaciones para despliegues individuales.  
-- Utilicé **Angular** y **Angular Material** para construir componentes reutilizables, garantizando consistencia y mantenimiento.  
-- Aseguré cobertura de pruebas unitarias del 85 % y realicé auditorías de rendimiento (Lighthouse > 90).  
-
-### **Frontend Developer**  
-**VIDA Tec (Buenos Aires)**  
-_Julio 2019 – Agosto 2020_  
-- Desarrollo de sitios web y portales corporativos orientados a clientes de gobierno y turismo.  
-- Uso de **Angular** (v7-v8) con **SASS**, BEM y gestión de estados con servicios RxJS.  
-- Implementé flujos CI básicos con Jenkins y automatización de tareas (Gulp, Grunt).  
-- Colaboré con diseñadores UX/UI para traducir prototipos de Figma a componentes funcionales y modulares.  
+**Boreal Technologies – Banco COMAFI**  
+_Remoto / Buenos Aires · Jun 2022 – Ene 2025_  
+- Diseño y desarrollo de arquitectura frontend (Next.js + microfrontends).  
+- Estándares técnicos, planificación de sprints y despliegues automatizados.  
+- Migración técnica, liderazgo de equipo y adopción de prácticas de testing e IA.
 
 ---
 
-## 🎓 Educación & Certificaciones
-
-- **MBA** – Instituto de Estudios Superiores de Administración (IESA), 2004 – 2006  
-  - Enfoque en liderazgo tecnológico, estrategia empresarial y gestión de proyectos digitales.  
-
-- **Licenciatura en Ciencias de Datos** – Facultad de Ciencias Exactas y Naturales, UBA (Marzo 2022 – Febrero 2030)  
-  - Cursos clave: Data Modeling, Warehousing, Python para Data Science, Machine Learning básico.  
-
-- **Frontend Profesional (Carrera)** – Platzi, 2015 – 2019  
-  - Certificaciones en React, Angular, Next.js, Microfrontends, Patrones de Diseño Frontend.  
-
-- **Web Developer** – Academia Hack, 2015 – 2016  
-  - Enfoque en JavaScript avanzado, maquetación y buenas prácticas HTML/CSS.  
+### **Frontend Developer**  
+**OMNi Costa Rica – Banco Vertical Salud**  
+_Remoto · Jul 2021 – Jun 2022_  
+- Desarrollo de plataforma React para servicios médicos y financieros.  
+- Diseño mobile-first y CI/CD para producción y staging.  
 
 ---
 
-## 📈 Hitos & Logros
+### **Frontend Developer**  
+**G&L Group – Banco ICBC**  
+_Buenos Aires · Ago 2020 – Dic 2021_  
+- Desarrollo modular en Angular + single-spa para app bancaria.  
+- Implementación de tests, performance tuning y accesibilidad.
 
-- **Contribuidor en Arctic Code Vault**: Mi trabajo preservado para futuras generaciones digitales.  
-- **Optimización de Deploys**: Reducción del ciclo de despliegue en un 30 % mediante pipelines de CI/CD y microfrontends.  
-- **Cobertura de Testing**: Mantengo un coverage promedio superior al 80 % en todos los módulos críticos.  
-- **Mentoría y Liderazgo**: Formé y guié a 6 desarrolladores junior en tecnologías React, Next.js y Angular.
+---
+
+### **Frontend Developer**  
+**VIDA Tec**  
+_Buenos Aires · Jul 2019 – Ago 2020_  
+- Desarrollo de sitios institucionales para gobierno y turismo.  
+- Angular, SASS, BEM, automatización con Gulp y Jenkins.
+
+---
+
+## 🎓 Formación Académica
+
+- 🎓 **MBA** – IESA (2004–2006)  
+  Estrategia · Finanzas · Dirección de empresas
+
+- 🧮 **Lic. en Ciencias de Datos (UBA)** – FCEN (2022–2030)  
+  Álgebra · Estadística · ML básico · Python
+
+- 💻 **Carrera Frontend** – Platzi  
+  Angular · React · Next.js · Arquitectura
+
+- 🧑‍💻 **Desarrollador Web** – Academia Hack  
+  JS avanzado · Maquetado · HTML5/CSS3
+
+---
+
+## 📈 Hitos Profesionales
+
+- 🧊 Arctic Code Vault Contributor  
+- 🚀 Reducción del time-to-market en 40 % (COMAFI)  
+- ✅ +85 % coverage en testing de apps críticas  
+- 👨‍🏫 Mentor de desarrolladores en frontend moderno  
+- 💡 Implementación de IA para aumentar productividad en procesos dev
 
 ---
 
 ## 📫 Contacto
 
-- **Sitio Web / Portafolio**: [alexballera.com](http://alexballera.com)  
-- **Email**: alex.ballera@gmail.com  
-- **LinkedIn**: [linkedin.com/in/alexballera](https://www.linkedin.com/in/alexballera)  
-- **Twitter**: [@alexballera](https://twitter.com/alexballera)  
+- 🌐 Sitio web: [alexballera.com](http://alexballera.com)  
+- 📧 Email: alex.ballera@gmail.com  
+- 💼 LinkedIn: [linkedin.com/in/alexballera](https://linkedin.com/in/alexballera)  
+- 🐦 Twitter: [@alexballera](https://twitter.com/alexballera)
 
 ---
 
-## 🔍 Organización de Repositorios
+> **"No construyo solo interfaces. Construyo soluciones que escalan, venden y marcan diferencia."**
 
-- **Comafi App Interna (Next.js)** – repositorio privado (colaboración a nivel corporativo).  
-- **Banco ICBC – App de Banca Digital (Angular + Microfrontend)** – repositorio privado (entrega continua con single-spa).  
-- **YOY App (Angular)** – repositorio privado (dashboards en tiempo real y sockets WebSocket).  
-- **webapp**, **flexgrid**, **responsive-design-patterns** – plantillas y ejemplos públicos de maquetado y patrones CSS/SASS.  
-
----
-
-> **“La innovación vista a futuro no es un lujo: es una obligación para quienes aspiran a liderar el cambio.”**
-
----
-
-> Si precisas un líder técnico Frontend con mentalidad empresarial, experiencia probada en bancos de primer nivel y pasión por la excelencia, estoy listo para impulsar tu próximo desafío digital.  
+> ¿Buscas un Senior Frontend con visión empresarial y experiencia bancaria real? Ya lo encontraste.
