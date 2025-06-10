@@ -1,22 +1,72 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCE = [
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const EXPERIENCE_ES = [
   {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    date: "2022 - 2025",
+    title: "Tech Lead / Senior Frontend Developer",
+    company: "Boreal Technologies – Banco COMAFI",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "Lideré el equipo Frontend como referente técnico, definiendo estándares de arquitectura, flujos de trabajo y roadmap de sprint. Diseñé e implementé la Comafi App Interna (Next.js)—aplicación de uso exclusivo corporativo—garantizando escalabilidad y adaptabilidad a nuevas funcionalidades.",
+  },
+  {
+    date: "2021 - 2022",
+    title: "Frontend Developer",
+    company: "OMNi Costa Rica – Banco Vertical Salud",
+    description:
+      "Desarrollo completo de la plataforma de servicios de salud bancaria, colaborando en la definición de casos de uso y user stories. Utilicé React & Next.js para construir módulos independientes de consultas médicas, pagos y citas en línea.",
+  },
+  {
+    date: "2020 - 2021",
+    title: "Frontend Developer",
+    company: "G&L Group – Banco ICBC",
+    description:
+      "Responsable del desarrollo y optimización de la App de Banca Digital para Banco ICBC. Implementé arquitectura microfrontend con single-spa, separando módulos de usuario, transferencias y notificaciones para despliegues individuales.",
   },
   {
     date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    title: "Frontend Developer",
+    company: "VIDA Tec",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "Desarrollo de sitios web y portales corporativos orientados a clientes de gobierno y turismo. Uso de Angular (v7-v8) con SASS, BEM y gestión de estados con servicios RxJS.",
   },
-  
 ];
+
+const EXPERIENCE_EN = [
+  {
+    date: "2022 - 2025",
+    title: "Tech Lead / Senior Frontend Developer",
+    company: "Boreal Technologies – Banco COMAFI",
+    description:
+      "I led the Frontend team as technical reference, defining architecture standards, workflows and sprint roadmaps. I designed and implemented the Comafi Internal App (Next.js)—exclusive corporate application—ensuring scalability and adaptability to new functionalities.",
+  },
+  {
+    date: "2021 - 2022",
+    title: "Frontend Developer",
+    company: "OMNi Costa Rica – Banco Vertical Salud",
+    description:
+      "Complete development of the bank health services platform, collaborating in the definition of use cases and user stories. I used React & Next.js to build independent modules for medical consultations, payments and online appointments.",
+  },
+  {
+    date: "2020 - 2021",
+    title: "Frontend Developer",
+    company: "G&L Group – Banco ICBC",
+    description:
+      "Responsible for the development and optimization of the Digital Banking App for Banco ICBC. I implemented microfrontend architecture with single-spa, separating user, transfer and notification modules for individual deployments.",
+  },
+  {
+    date: "2019 - 2020",
+    title: "Frontend Developer",
+    company: "VIDA Tec",
+    description:
+      "Development of corporate websites and portals oriented to government and tourism clients. Use of Angular (v7-v8) with SASS, BEM and state management with RxJS services.",
+  },
+];
+
+const EXPERIENCE = lang === 'en' ? EXPERIENCE_EN : EXPERIENCE_ES;
 ---
 
 <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
