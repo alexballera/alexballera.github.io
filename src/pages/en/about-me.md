@@ -34,6 +34,12 @@ I hold an **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-m
 - **CI/CD**: GitHub Actions, continuous integration and deployment
 - **Testing**: Jest, React Testing Library, Cypress for E2E testing
 
+### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Business & Strategic Skills</span>
+- **Leadership** · **Strategic Planning** · **Business Management** · **Corporate Finance**
+- **Startup Launch** · **Project Finance** · **Forecasting**
+- **Business Development** · **Team Leadership** · **Product Strategy**
+- **Marketing** · **Branding** · **Valuation**
+
 ## 💼 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Experience & Sectors</span>
 
 I've worked developing scalable web solutions in various critical sectors:

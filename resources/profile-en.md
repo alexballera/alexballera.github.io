@@ -12,7 +12,7 @@ Proven ability to lead from both a technical and business perspective. My backgr
 
 ---
 
-## 🧠 Core Competencies
+## 🧠 Skills & Tech Stack
 
 ### Frontend Engineering  
 - JavaScript (ES6+), TypeScript, HTML5, CSS3 (BEM, SASS)  
@@ -25,9 +25,10 @@ Proven ability to lead from both a technical and business perspective. My backgr
 - GitHub Actions, CI/CD, Vercel, Netlify
 
 ### Business & Strategic Leadership  
-- Strategic Planning · Business Management · Corporate Finance  
+- Leadership · Strategic Planning · Business Management · Corporate Finance  
 - Startup Launch · Project Finance · Forecasting  
-- Business Development · Team Leadership · Product Strategy
+- Business Development · Team Leadership · Product Strategy  
+- Marketing · Branding · Valuation
 
 ### Marketing & Branding  
 - Marketing Strategy · Brand Positioning · Value Proposition  

@@ -12,7 +12,7 @@ Capacidad comprobada para liderar desde la tecnología y desde el negocio. Con b
 
 ---
 
-## 🧠 Aptitudes Técnicas y Estratégicas
+## 🧠 Aptitudes y Stack Tecnológico
 
 ### Frontend Engineering  
 - JavaScript (ES6+), TypeScript, HTML5, CSS3 (BEM, SASS)  
@@ -25,9 +25,10 @@ Capacidad comprobada para liderar desde la tecnología y desde el negocio. Con b
 - GitHub Actions, CI/CD, Vercel, Netlify
 
 ### Dirección Estratégica y de Negocios  
-- Planificación estratégica · Gestión empresarial · Corporate Finance  
+- Liderazgo · Planificación estratégica · Gestión empresarial · Finanzas Corporativas  
 - Lanzamiento de Startups · Project Finance · Forecasting  
-- Business Development · Liderazgo de equipos interdisciplinarios
+- Business Development · Gerencia · Estrategia de Producto  
+- Marketing · Branding · Valuation
 
 ### Marketing & Branding  
 - Estrategia de mercadotecnia · Valor de marca · Posicionamiento  
@@ -36,6 +37,9 @@ Capacidad comprobada para liderar desde la tecnología y desde el negocio. Con b
 ### Análisis y Toma de Decisiones  
 - Business Analysis · Investment Analysis · Data Analysis  
 - Market Research · KPIs · Modelado de negocios
+
+### Aptitudes Clave  
+- Liderazgo · Marketing · Finanzas Corporativas · Gerencia · Branding · Valuation
 
 ---
 

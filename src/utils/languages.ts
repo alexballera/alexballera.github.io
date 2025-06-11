@@ -1,5 +1,6 @@
 export interface Language {
   name: string;
+  nameEn?: string;  // Añadimos nombre en inglés
   iconName: string;
   className?: string;
 }
@@ -102,8 +103,43 @@ export const languages: Record<string, Language> = {
     name: "ChatGPT",
     iconName: "chatgpt",
   },
+  leadership: {
+    name: "Liderazgo",
+    nameEn: "Leadership",
+    iconName: "leadership",
+  },
+  marketing: {
+    name: "Marketing",
+    nameEn: "Marketing", // Mismo en ambos idiomas
+    iconName: "marketing",
+  },
+  finance: {
+    name: "Finanzas",
+    nameEn: "Finance",
+    iconName: "finance",
+  },
+  strategy: {
+    name: "Estrategia",
+    nameEn: "Strategy",
+    iconName: "strategy",
+  },
+  management: {
+    name: "Gerencia",
+    nameEn: "Management",
+    iconName: "management",
+  },
+  branding: {
+    name: "Branding",
+    nameEn: "Branding", // Mismo en ambos idiomas
+    iconName: "branding",
+  },
+  valuation: {
+    name: "Valuation",
+    nameEn: "Valuation", // Mismo en ambos idiomas
+    iconName: "valuation",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
   return languages[lang] || languages.html;
-}; 
+};

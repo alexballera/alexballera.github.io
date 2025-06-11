@@ -34,6 +34,12 @@ Cuento con un **<span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:
 - **CI/CD**: GitHub Actions, integración y despliegue continuo
 - **Testing**: Jest, React Testing Library, Cypress para pruebas E2E
 
+### <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Aptitudes de Negocio y Estrategia</span>
+- **Liderazgo** · **Planificación estratégica** · **Gestión empresarial** · **Finanzas Corporativas**
+- **Lanzamiento de Startups** · **Project Finance** · **Forecasting**
+- **Business Development** · **Gerencia** · **Estrategia de Producto**
+- **Marketing** · **Branding** · **Valuation**
+
 ## 💼 <span class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">Experiencia y Sectores</span>
 
 He trabajado desarrollando soluciones web escalables en diversos sectores críticos:
@@ -113,4 +119,4 @@ Me apasiona compartir conocimiento y colaborar en proyectos que generen **impact
 
 > *"El mejor código es el que resuelve problemas reales de personas reales"* - Alex Ballera
 
-¿Tienes un proyecto en mente? ¡Hablemos y creemos algo increíble juntos! 🚀 
+¿Tienes un proyecto en mente? ¡Hablemos y creemos algo increíble juntos! 🚀

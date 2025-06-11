@@ -7,29 +7,30 @@ const allTools = [
   "angular",
   "react",
   "nextjs",
-  "astro",
-  
   "node",
   "python",
-
   "css",
   "tailwind",
   "sass",
-  "bootstrap",
-
   "sql",
-
-  "figma",
-  "vercel",
-  
   "git",
-  "markdown",
-
   "copilot",
   "chatgpt",
 ];
 
+// Business/soft skills with their corresponding icons
+const businessTools = [
+  "leadership",
+  "marketing",
+  "finance",
+  "strategy", 
+  "management",
+  "branding",
+  "valuation",
+];
+
 import Capsule from "../ui/Capsule.astro";
+import { getLangFromUrl } from '../../i18n/utils';
 
 type ToolVariant = "default" | "center";
 
@@ -43,11 +44,18 @@ const variantClasses: Record<ToolVariant, string> = {
 };
 
 const { variant = "default", linkEnabled = false, size = "md" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 
 // Combine base classes with variant-specific classes
 const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
 ---
 
+<!-- Render tech stack capsules -->
 <div class={classes}>
-  {allTools.map((tool) => <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />)}
+  {allTools.map((tool) => (
+    <Capsule name={tool} linkEnabled={linkEnabled} size={size} />
+  ))}
+  {businessTools.map((tool) => (
+    <Capsule name={tool} linkEnabled={linkEnabled} size={size} />
+  ))}
 </div>

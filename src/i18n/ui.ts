@@ -80,7 +80,7 @@ export const ui = {
     'hero.projectsDescriptionPart3': 'en los que he trabajado, aplicando tecnología, diseño y mucha creatividad.',
     'hero.projectsDescriptionHighlight3': '¡Échales un vistazo!',
     'hero.githubText': '¿Te gusta el diseño de este sitio?',
-    'hero.techStack': 'Stack tecnológico',
+    'hero.techStack': 'Stack Tecnológico',
     'hero.tech': 'Tech',
     'hero.stack': 'Stack',
     

@@ -1,14 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
 import { getLanguage } from "../../utils/languages";
+import { getLangFromUrl } from '../../i18n/utils';
 
 interface Props {
-  lang: string;
+  name: string;
   size?: "xs" | "md";
   linkEnabled?: boolean;
+  variant?: "default" | "soft";
 }
 
-const { size = "md", lang, linkEnabled = true } = Astro.props as Props;
+const { size = "md", name, linkEnabled = true, variant = "default" } = Astro.props as Props;
+const lang = getLangFromUrl(Astro.url);
 
 const baseClasses = {
   container: [
@@ -27,6 +30,10 @@ const baseClasses = {
     "transition-all duration-300 ease-in-out",
     "border border-zinc-200 dark:border-zinc-700",
   ].join(" "),
+  soft: [
+    "bg-mint-50 dark:bg-mint-900/20",
+    "hover:bg-mint-100 hover:text-mint-800 dark:hover:bg-mint-900/50",
+  ].join(" "),
 };
 
 const sizeClasses = {
@@ -34,11 +41,16 @@ const sizeClasses = {
   md: "size-7",
 };
 
-const selectedLanguage = getLanguage(lang);
+const selectedLanguage = getLanguage(name);
+// Usar nombre en inglés si existe y estamos en página en inglés
+const displayName = (lang === 'en' && selectedLanguage.nameEn) 
+  ? selectedLanguage.nameEn 
+  : selectedLanguage.name;
 
 const getContainerClasses = () => {
-  const textSize = selectedLanguage.name.length > 10 ? "text-sm" : "text-base";
-  return `${baseClasses.container} ${textSize}`;
+  const textSize = displayName.length > 10 ? "text-sm" : "text-base";
+  const variantClass = variant === "soft" ? baseClasses.soft : "";
+  return `${baseClasses.container} ${textSize} ${variantClass}`;
 };
 
 const getIconContainerClasses = () => {
@@ -48,7 +60,7 @@ const getIconContainerClasses = () => {
 };
 
 const getIconClasses = () => {
-  return "w-full! transition-colors duration-300 ease-in-out";
+  return "w-full transition-colors duration-300 ease-in-out";
 };
 ---
 
@@ -56,8 +68,8 @@ const getIconClasses = () => {
   linkEnabled ? (
     <a
       class="cursor-pointer"
-      href={`/blog/techs/${lang}`}
-      aria-label={`View articles about ${selectedLanguage.name}`}
+      href={`/blog/techs/${name}`}
+      aria-label={`View articles about ${displayName}`}
       role="link"
     >
       <span
@@ -68,11 +80,11 @@ const getIconClasses = () => {
         <div
           class={getIconContainerClasses()}
           role="img"
-          aria-label={`${selectedLanguage.name} icon`}
+          aria-label={`${displayName} icon`}
         >
           <Icon class={getIconClasses()} name={selectedLanguage.iconName} />
         </div>
-        {selectedLanguage.name}
+        {displayName}
       </span>
     </a>
   ) : (
@@ -84,11 +96,11 @@ const getIconClasses = () => {
       <div
         class={getIconContainerClasses()}
         role="img"
-        aria-label={`${selectedLanguage.name} icon`}
+        aria-label={`${displayName} icon`}
       >
         <Icon class={getIconClasses()} name={selectedLanguage.iconName} />
       </div>
-      {selectedLanguage.name}
+      {displayName}
     </span>
   )
 }
