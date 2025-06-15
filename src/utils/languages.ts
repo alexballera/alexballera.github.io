@@ -55,6 +55,11 @@ export const languages: Record<string, Language> = {
     iconName: "python",
     className: "bg-white dark:bg-zinc-800" // Ensure proper background for contrast
   },
+  docker: {
+    name: "Docker",
+    iconName: "docker",
+    className: "bg-white dark:bg-zinc-800" // Docker icon needs proper background for contrast
+  },
   sass: {
     name: "Sass",
     iconName: "sass",

@@ -17,7 +17,8 @@ Desarrollador Frontend orientado a objetivos con experiencia en sectores bancari
 - **Styling**: TailwindCSS, SASS, CSS3, Responsive Design
 - **Architecture**: Microfrontends (single-spa), Component Architecture
 - **State Management**: Redux Toolkit, RxJS, Context API
-- **Tools**: Git, GitHub Actions, Docker, Webpack, Vite
+- **DevOps**: 🐳 Docker, CI/CD
+- **Tools**: Git, GitHub Actions, Webpack, Vite
 
 ### 🚀 Proyectos Destacados
 - **Banco COMAFI** - Aplicación interna (Next.js + Redux)
