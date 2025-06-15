@@ -149,6 +149,52 @@ Nombre: www
 Valor: alexballera.github.io
 ```
 
+## 🐳 Desarrollo con Docker
+
+Este proyecto incluye configuración para desarrollo con Docker, lo que permite un entorno consistente y aislado.
+
+### 🚀 Comandos Docker
+
+```bash
+# Iniciar el entorno de desarrollo
+./docker-dev.sh start
+
+# Detener el entorno
+./docker-dev.sh stop
+
+# Ver logs del contenedor
+./docker-dev.sh logs
+
+# Acceder a la terminal del contenedor
+./docker-dev.sh shell
+
+# Construir el proyecto dentro del contenedor
+./docker-dev.sh build
+
+# Reiniciar el servidor de desarrollo (útil si el hot reload no funciona)
+./docker-dev.sh restart
+
+# Ejecutar vista previa de producción
+./docker-dev.sh preview
+```
+
+### 📋 Características del Entorno Docker
+
+- **Hot Reload**: Los cambios en archivos locales se reflejan automáticamente en el navegador
+- **Puerto**: El servidor está disponible en http://localhost:4321
+- **Volúmenes**: Los archivos del proyecto están montados dentro del contenedor
+- **Node_modules**: Aislados dentro del contenedor para evitar problemas de compatibilidad
+
+### ⚙️ Configuración Docker
+
+La configuración incluye:
+
+- **Dockerfile**: Basado en Node.js 18, optimizado para desarrollo web
+- **docker-compose.yml**: Configura el contenedor, puertos y volúmenes
+- **docker-dev.sh**: Script de utilidades para gestionar el entorno Docker
+
+---
+
 ## 📬 Contacto
 
 - **Website**: [alexballera.com](https://alexballera.com)

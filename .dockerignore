@@ -1,0 +1,26 @@
+# Dependencias y módulos
+node_modules
+npm-debug.log
+
+# Archivos de construcción
+dist
+.astro
+
+# Archivos de entorno y configuración local
+.env
+.env.local
+
+# Archivos del sistema y editores
+.DS_Store
+.idea
+.vscode
+*.swp
+*.swo
+
+# Archivos de Git
+.git
+.gitignore
+
+# Otros archivos temporales
+*.log
+*.tmp

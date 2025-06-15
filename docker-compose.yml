@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: alexballera-site
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      # Excluir node_modules del montaje de volumen
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    # Comando para ejecutar el servidor de desarrollo
+    command: npm run dev -- --host 0.0.0.0

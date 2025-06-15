@@ -1,14 +1,23 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap"
-import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://alexballera.com",
   base: "/",
+  server: {
+    host: '0.0.0.0',
+    port: 4321,
+    watch: {
+      // Asegurar que los cambios en sistemas de archivos montados sean detectados
+      usePolling: true,
+      interval: 1000
+    }
+  },
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
