@@ -90,6 +90,7 @@ export const ui = {
     'hero.techStack': 'Stack Tecnológico',
     'hero.tech': 'Tech',
     'hero.stack': 'Stack',
+    'hero.githubRepositories': 'Repositorios GitHub',
     
     // Projects section
     'projects.completed': 'Completados',
@@ -198,6 +199,7 @@ export const ui = {
     'hero.techStack': 'Tech Stack',
     'hero.tech': 'Tech',
     'hero.stack': 'Stack',
+    'hero.githubRepositories': 'GitHub Repositories',
     
     // Projects section
     'projects.completed': 'Completed',
