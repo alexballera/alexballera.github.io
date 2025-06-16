@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Industria Automotores y Servicios de Aragua'
+title: 'INASA'
 pubDate: 2012-02-01
 description: 'Puesta en marcha de empresa concesionaria de Chery en Venezuela, dedicada a la comercialización y servicio post venta de vehículos.'
 languages: ["Marketing", "Estrategia", "Finanzas", "Gerencia", "Emprendimiento"]
