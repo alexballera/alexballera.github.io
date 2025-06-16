@@ -1,0 +1,100 @@
+---
+// Un componente para mostrar imágenes de proyectos con textos traducidos superpuestos
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: string | number;
+  height?: string | number;
+  class?: string;
+}
+
+const { src, alt, width, height, class: className = "" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Determinar si esta imagen es una de las que tienen superposiciones de texto
+const needsOverlay = src.includes("portfolio");
+---
+
+<div class={`project-image-container relative ${className}`}>
+  <img 
+    src={src} 
+    alt={alt} 
+    width={width} 
+    height={height}
+    class="w-full h-full object-cover"
+  />
+  
+  {needsOverlay && (
+    <div class="absolute inset-0 z-10 overlay-container">
+      <!-- Primera pantalla: "Detrás del Código" -->
+      <div class="absolute left-0 top-[32%] transform w-1/2 pl-8">
+        <div class="relative">
+          <span class="text-red-600 text-xs font-semibold mb-1 block">@ tlayuca</span>
+          <h3 class="text-[3rem] leading-[0.85] font-extrabold text-red-600 font-sans">
+            {lang === 'es' ? 'Detrás del Código' : 'Behind The Code'}
+          </h3>
+        </div>
+        
+        <!-- Descripción del proyecto -->
+        <div class="text-white text-sm max-w-[90%] leading-tight mt-2 font-light">
+          {t('projects.detrasDelCodigo')}
+        </div>
+      </div>
+      
+      <!-- Segunda pantalla: "Encuentra al experto" -->
+      <div class="absolute right-0 top-[26%] text-center w-1/2">
+        {lang === 'es' ? (
+          <div class="text-3xl md:text-4xl font-extrabold uppercase leading-none">
+            <span class="text-white tracking-wide block">ENCUENTRA</span>
+            <span class="text-white tracking-wide block mt-1">AL EXPERTO</span>
+            <span class="text-yellow-400 font-black text-5xl md:text-6xl block mt-1">IDEAL</span>
+            <span class="text-white tracking-wide block mt-1">PARA TU EVENTO</span>
+          </div>
+        ) : (
+          <div class="text-3xl md:text-4xl font-extrabold uppercase leading-none">
+            <span class="text-white tracking-wide block">FIND THE</span>
+            <span class="text-white tracking-wide block mt-1">EXPERT</span>
+            <span class="text-yellow-400 font-black text-5xl md:text-6xl block mt-1">IDEAL</span>
+            <span class="text-white tracking-wide block mt-1">FOR YOUR EVENT</span>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</div>
+
+<style>
+  .overlay-container {
+    pointer-events: none; /* Para que los clics pasen a través del overlay */
+  }
+
+  @media (max-width: 768px) {
+    .overlay-container h3 {
+      font-size: 2rem !important;
+    }
+    .overlay-container div[class*="text-3xl"] {
+      font-size: 1.5rem !important;
+    }
+    .overlay-container div .text-yellow-400 {
+      font-size: 2rem !important;
+    }
+    .overlay-container .text-sm {
+      font-size: 0.75rem !important;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .overlay-container h3 {
+      font-size: 1.5rem !important;
+    }
+    .overlay-container div[class*="text-3xl"] {
+      font-size: 1.25rem !important;
+    }
+    .overlay-container div .text-yellow-400 {
+      font-size: 1.75rem !important;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: string | number;
+  height?: string | number;
+  class?: string;
+}
+
+const { src, alt, width, height, class: className = "" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Necesitamos añadir traducciones para los textos que aparecen en la imagen
+---
+
+<div class={`relative ${className}`}>
+  <img 
+    src={src} 
+    alt={alt}
+    loading="lazy"
+    width={width} 
+    height={height}
+    class="w-full h-auto"
+  />
+  
+  <!-- No modificaremos los estilos originales de la imagen, solo agregaremos la capa de traducción -->
+</div>
