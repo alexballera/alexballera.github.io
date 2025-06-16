@@ -257,7 +257,16 @@ export const languages: Record<string, Language> = {
   },
 };
 
-export const getLanguage = (lang: string): Language => {
+export const getLanguage = (lang: string | undefined): Language => {
+  // Manejar el caso donde lang es undefined o null
+  if (!lang) {
+    return {
+      name: "Unknown",
+      nameEn: "Unknown",
+      iconName: "info"
+    };
+  }
+  
   // Si el idioma existe, devuélvelo
   if (languages[lang]) {
     return languages[lang];
