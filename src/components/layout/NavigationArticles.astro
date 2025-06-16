@@ -4,7 +4,13 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md") as any[];
+// Cargar posts según el idioma
+let allPosts: any[] = [];
+if (lang === 'en') {
+  allPosts = await Astro.glob("../../pages/en/blog/posts/*.md") as any[];
+} else {
+  allPosts = await Astro.glob("../../pages/es/blog/posts/*.md") as any[];
+}
 
 // Ensure posts have a date before sorting them
 const sortedPosts = allPosts
