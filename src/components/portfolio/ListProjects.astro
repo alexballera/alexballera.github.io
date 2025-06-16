@@ -8,9 +8,9 @@ const lang = getLangFromUrl(Astro.url);
 // Cargar proyectos según el idioma
 let projects = [];
 if (lang === 'en') {
-  projects = await Astro.glob("../../pages/en/portfolio/projects/*.md");
+  projects = await Astro.glob("../../pages/en/portfolio/*.md");
 } else {
-  projects = await Astro.glob("../../pages/portfolio/projects/*.md");
+  projects = await Astro.glob("../../pages/portfolio/*.md");
 }
 
 // Sort by descending date (most recent first)
