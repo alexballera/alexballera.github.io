@@ -18,7 +18,7 @@ import Capsule from "../ui/Capsule.astro";
         <div class="flex flex-wrap gap-3">
           {
             languages.map((language: string) => (
-              <Capsule size={size} linkEnabled={false} lang={language} />
+              <Capsule size={size} linkEnabled={false} name={language} />
             ))
           }
         </div>

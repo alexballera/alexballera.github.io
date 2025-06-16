@@ -143,8 +143,146 @@ export const languages: Record<string, Language> = {
     nameEn: "Valuation", // Mismo en ambos idiomas
     iconName: "valuation",
   },
+  // Marketing y negocios
+  "Marketing Strategy": {
+    name: "Marketing Strategy",
+    nameEn: "Marketing Strategy",
+    iconName: "marketing",
+  },
+  "Planificación estratégica": {
+    name: "Planificación estratégica",
+    nameEn: "Strategic Planning",
+    iconName: "strategy",
+  },
+  "Financial Management": {
+    name: "Gestión Financiera",
+    nameEn: "Financial Management",
+    iconName: "finance",
+  },
+  "Business Development": {
+    name: "Desarrollo de Negocio",
+    nameEn: "Business Development",
+    iconName: "branding",
+  },
+  "Market Analysis": {
+    name: "Análisis de Mercado",
+    nameEn: "Market Analysis",
+    iconName: "dashboard",
+  },
+  "Project Finance": {
+    name: "Finanzas de Proyectos",
+    nameEn: "Project Finance",
+    iconName: "finance",
+  },
+  "Gestión de proyectos": {
+    name: "Gestión de proyectos",
+    nameEn: "Project Management",
+    iconName: "management",
+  },
+  "Liderazgo estratégico": {
+    name: "Liderazgo estratégico",
+    nameEn: "Strategic Leadership",
+    iconName: "leadership",
+  },
+  "Business Planning": {
+    name: "Planificación de Negocios",
+    nameEn: "Business Planning",
+    iconName: "briefcase",
+  },
+  "Management": {
+    name: "Gestión",
+    nameEn: "Management",
+    iconName: "management",
+  },
+  "Corporate Finance": {
+    name: "Finanzas Corporativas",
+    nameEn: "Corporate Finance",
+    iconName: "finance",
+  },
+  "Puesta en marcha de empresas": {
+    name: "Puesta en marcha de empresas",
+    nameEn: "Startup Launch",
+    iconName: "rocket",
+  },
+  "Plan de negocio": {
+    name: "Plan de negocio",
+    nameEn: "Business Plan",
+    iconName: "briefcase",
+  },
+  "Investment Analysis": {
+    name: "Análisis de Inversiones",
+    nameEn: "Investment Analysis",
+    iconName: "valuation",
+  },
+  "Business Analysis": {
+    name: "Análisis de Negocio",
+    nameEn: "Business Analysis",
+    iconName: "dashboard",
+  },
+  "Entrepreneurial Finance": {
+    name: "Finanzas Empresariales",
+    nameEn: "Entrepreneurial Finance",
+    iconName: "finance",
+  },
+  // Versiones cortas de tags de negocios
+  "Estrategia": {
+    name: "Estrategia",
+    nameEn: "Strategy",
+    iconName: "strategy",
+  },
+  "Strategy": {
+    name: "Estrategia",
+    nameEn: "Strategy",
+    iconName: "strategy",
+  },
+  "Finanzas": {
+    name: "Finanzas",
+    nameEn: "Finance",
+    iconName: "finance",
+  },
+  "Finance": {
+    name: "Finanzas",
+    nameEn: "Finance",
+    iconName: "finance",
+  },
+  "Gerencia": {
+    name: "Gerencia",
+    nameEn: "Management",
+    iconName: "management",
+  },
+  "Emprendimiento": {
+    name: "Emprendimiento",
+    nameEn: "Entrepreneurship",
+    iconName: "rocket",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
-  return languages[lang] || languages.html;
+  // Si el idioma existe, devuélvelo
+  if (languages[lang]) {
+    return languages[lang];
+  }
+  
+  // Si no existe, crea un idioma genérico basado en el nombre proporcionado
+  // y usa un ícono apropiado según el contexto
+  let iconName = "info";
+  
+  // Detectar si es una habilidad de negocios o técnica
+  if (lang.toLowerCase().includes("market") || 
+      lang.toLowerCase().includes("business") || 
+      lang.toLowerCase().includes("strateg") ||
+      lang.toLowerCase().includes("finance") || 
+      lang.toLowerCase().includes("management")) {
+    iconName = "briefcase";
+  } else if (lang.toLowerCase().includes("develop") || 
+             lang.toLowerCase().includes("code") || 
+             lang.toLowerCase().includes("program")) {
+    iconName = "code";
+  }
+  
+  return {
+    name: lang,
+    nameEn: lang,
+    iconName: iconName
+  };
 };

@@ -1,9 +1,24 @@
 ---
 import Project from "./Project.astro";
-const allPosts = await Astro.glob("../../pages/portfolio/projects/*.md") as any[];
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const allProjects = await Astro.glob("../../pages/portfolio/projects/*.md") as any[];
+
+// Filtrar proyectos por idioma (los que no tienen sufijo de idioma son en español -idioma por defecto)
+// y los que tienen el sufijo correcto para el idioma actual
+const filteredProjects = allProjects.filter((project) => {
+  const fileName = project.file.split('/').pop();
+  // Si estamos en inglés, mostrar solo los archivos que terminan en -en.md
+  if (lang === 'en') {
+    return fileName.endsWith('-en.md');
+  }
+  // Si estamos en español, mostrar solo los archivos que NO terminan en -en.md
+  return !fileName.endsWith('-en.md');
+});
 
 // Sort by descending date (most recent first)
-allPosts.sort(
+filteredProjects.sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).getTime() -
     new Date(a.frontmatter.pubDate).getTime(),
@@ -20,7 +35,7 @@ allPosts.sort(
     class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
   >
     {
-      allPosts.map((post) => (
+      filteredProjects.map((post) => (
         <Project
           url={post.url}
           title={post.frontmatter.title}
