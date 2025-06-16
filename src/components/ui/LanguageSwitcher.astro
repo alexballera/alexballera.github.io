@@ -8,7 +8,10 @@ const translatePath = useTranslatedPath(lang);
 const currentPath = Astro.url.pathname;
 
 // Remove language prefix from current path to get the base route
-const baseRoute = lang === 'es' ? currentPath : currentPath.replace(`/${lang}`, '') || '/';
+const pathParts = currentPath.split('/');
+// Eliminar la parte vacía inicial y el código de idioma
+pathParts.splice(0, 2);
+const baseRoute = '/' + pathParts.join('/');
 ---
 
 <div class="relative group">
@@ -36,7 +39,7 @@ const baseRoute = lang === 'es' ? currentPath : currentPath.replace(`/${lang}`, 
   >
     {Object.entries(languages).map(([code, name]) => (
       <a
-        href={code === 'es' ? baseRoute : translatePath(baseRoute, code as keyof typeof languages)}
+        href={`/${code}${baseRoute}`}
         class={`block px-4 py-2 text-sm hover:bg-mint-50 dark:hover:bg-mint-900/20 transition-colors ${
           lang === code 
             ? 'text-mint-600 dark:text-mint-300 font-medium' 

@@ -14,8 +14,8 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    // Since prefixDefaultLocale is false, default language (es) doesn't need prefix
-    return l === defaultLang ? path : `/${l}${path}`;
+    // Since prefixDefaultLocale is true, all languages need prefix
+    return `/${l}${path}`;
   }
 }
 
@@ -24,7 +24,7 @@ export function getRouteFromUrl(url: URL): string {
   const parts = pathname.split('/');
   const lang = parts[1];
   
-  if (lang in ui && lang !== defaultLang) {
+  if (lang in ui) {
     return '/' + parts.slice(2).join('/');
   }
   return pathname;

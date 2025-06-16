@@ -15,7 +15,13 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md") as any[];
+// Split by language to avoid dynamic imports
+let allPosts = [];
+if (lang === 'en') {
+  allPosts = await Astro.glob('../../pages/en/blog/posts/*.md') as any[];
+} else {
+  allPosts = await Astro.glob('../../pages/es/blog/posts/*.md') as any[];
+}
 
 // Sort by date in descending order (newest first)
 allPosts.sort((a, b) => {

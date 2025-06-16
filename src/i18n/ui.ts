@@ -86,6 +86,7 @@ export const ui = {
     
     // Projects section
     'projects.completed': 'Completados',
+    'projects.viewMore': 'Ver Más Proyectos...',
     
     // Navigation
     'navigation.previousPost': 'Post Anterior',
@@ -98,11 +99,11 @@ export const ui = {
     'toc.title': 'Tabla de Contenidos',
     
     // Site metadata
-    'site.title': 'NeonMint by EFEELE 🚀',
-    'site.description': 'Bienvenido a NeonMint by EFEELE, donde desarrollo software y comparto conocimiento.',
-    'site.imageAlt': 'Imagen por defecto de EFEELE',
-    'site.sitename': 'NeonMint by EFEELE🚀',
-    'site.author': 'Fernando Lopez | EFEELE',
+    'site.title': 'Alex Ballera | Senior Frontend Developer',
+    'site.description': 'Bienvenido al portafolio de Alex Ballera, desarrollador Frontend especializado en React, Angular y Next.js.',
+    'site.imageAlt': 'Imagen por defecto de Alex Ballera',
+    'site.sitename': 'Alex Ballera | Portfolio',
+    'site.author': 'Alex Ballera',
   },
   en: {
     'nav.home': 'Home',
@@ -184,6 +185,7 @@ export const ui = {
     
     // Projects section
     'projects.completed': 'Completed',
+    'projects.viewMore': 'View More Projects...',
     
     // Navigation
     'navigation.previousPost': 'Previous Post',
@@ -196,10 +198,10 @@ export const ui = {
     'toc.title': 'Table of Contents',
     
     // Site metadata
-    'site.title': 'NeonMint by EFEELE 🚀',
-    'site.description': 'Welcome to NeonMint by EFEELE, where I develop software and share knowledge.',
-    'site.imageAlt': 'Default image of EFEELE',
-    'site.sitename': 'NeonMint by EFEELE🚀',
-    'site.author': 'Fernando Lopez | EFEELE',
+    'site.title': 'Alex Ballera | Senior Frontend Developer',
+    'site.description': 'Welcome to Alex Ballera\'s portfolio, a Frontend developer specialized in React, Angular, and Next.js.',
+    'site.imageAlt': 'Default image of Alex Ballera',
+    'site.sitename': 'Alex Ballera | Portfolio',
+    'site.author': 'Alex Ballera',
   },
 } as const;

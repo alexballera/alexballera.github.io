@@ -1,5 +1,13 @@
 ---
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md") as any[];
+import { getLangFromUrl } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+// Split by language to avoid dynamic imports
+let allPosts = [];
+if (lang === 'en') {
+  allPosts = await Astro.glob('../../pages/en/blog/posts/*.md') as any[];
+} else {
+  allPosts = await Astro.glob('../../pages/es/blog/posts/*.md') as any[];
+}
 
 import Tag from "../ui/Tag.astro";
 import ReadMore from "../ui/ReadMore.astro";

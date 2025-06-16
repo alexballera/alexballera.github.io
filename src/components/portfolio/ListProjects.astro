@@ -1,16 +1,17 @@
 ---
 import Project from "./Project.astro";
-import { getLangFromUrl } from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import { defaultLang } from '../../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 // Cargar proyectos según el idioma
 let projects = [];
 if (lang === 'en') {
-  projects = await Astro.glob("../../pages/en/portfolio/*.md");
+  projects = await Astro.glob('../../pages/en/portfolio/*.md');
 } else {
-  projects = await Astro.glob("../../pages/portfolio/*.md");
+  projects = await Astro.glob('../../pages/es/portfolio/*.md');
 }
 
 // Sort by descending date (most recent first)
@@ -51,7 +52,7 @@ projects.sort(
     <button
       class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
     >
-      View More Projects...
+      {t('projects.viewMore')}
     </button>
   </div>
 </section>
