@@ -11,32 +11,32 @@ export COMPOSE_BAKE=true
 case "$1" in
   start)
     echo "Iniciando el entorno de desarrollo..."
-    docker-compose up -d
+    docker compose up -d
     echo "Entorno iniciado en http://localhost:4321"
     ;;
   stop)
     echo "Deteniendo el entorno de desarrollo..."
-    docker-compose down
+    docker compose down
     ;;
   build)
     echo "Construyendo el proyecto..."
-    docker-compose exec app npm run build
+    docker compose exec app npm run build
     ;;
   preview)
     echo "Ejecutando vista previa de producción..."
-    docker-compose exec app npm run preview -- --host 0.0.0.0
+    docker compose exec app npm run preview -- --host 0.0.0.0
     ;;
   shell)
     echo "Abriendo shell en el contenedor..."
-    docker-compose exec app /bin/bash
+    docker compose exec app /bin/bash
     ;;
   logs)
     echo "Mostrando logs..."
-    docker-compose logs -f app
+    docker compose logs -f app
     ;;
   restart)
     echo "Reiniciando el servidor de desarrollo..."
-    docker-compose restart app
+    docker compose restart app
     echo "Entorno reiniciado en http://localhost:4321"
     ;;
   *)
