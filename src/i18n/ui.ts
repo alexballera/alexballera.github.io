@@ -108,6 +108,13 @@ export const ui = {
     // Table of contents
     'toc.title': 'Tabla de Contenidos',
     
+    // Hobbies
+    'hobbies.running': 'Correr',
+    'hobbies.reading': 'Leer',
+    'hobbies.music': 'Música',
+    'hobbies.learning': 'Aprender',
+    'hobbies.cooking': 'Cocinar',
+    
     // Site metadata
     'site.title': 'Alex Ballera | Senior Frontend Developer',
     'site.description': 'Bienvenido al portafolio de Alex Ballera, desarrollador Frontend especializado en React, Angular y Next.js.',
@@ -216,6 +223,13 @@ export const ui = {
     
     // Table of contents
     'toc.title': 'Table of Contents',
+    
+    // Hobbies
+    'hobbies.running': 'Running',
+    'hobbies.reading': 'Reading',
+    'hobbies.music': 'Music',
+    'hobbies.learning': 'Learning',
+    'hobbies.cooking': 'Cooking',
     
     // Site metadata
     'site.title': 'Alex Ballera | Senior Frontend Developer',
