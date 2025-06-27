@@ -18,12 +18,12 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
 };
 
 const menu = {
-  about: { name: t('nav.about'), path: "/about-me/" },
+  about: { name: t('nav.about'), path: `/${lang}/about-me/` },
   blog: { 
     name: t('nav.blog'), 
-    path: "/blog/",
+    path: `/${lang}/blog/`,
     dropdown: [
-      { name: t('blog.allPosts'), path: "/blog/posts/" },
+      { name: t('blog.allPosts'), path: `/${lang}/blog/posts/` },
     ]
   },
   home: { name: t('nav.home'), path: "/#home" },
