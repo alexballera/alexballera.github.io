@@ -204,11 +204,11 @@ Tareas:
 ## Métricas (rellenar)
 | Métrica | Baseline | Optimizado | Δ |
 |---------|----------|-----------|----|
-| Tamaño dist total | | | |
-| Peso JS principal | | | |
-| Nº dependencias prod | | | |
-| Lighthouse Performance | | | |
-| Lighthouse Accessibility | | | |
+| Tamaño dist total | 3.5MB | | |
+| Peso JS principal | ~12.35kB + 8.82kB (modules) | | |
+| Nº dependencias prod | 11 | | |
+| Lighthouse Performance | (pendiente) | | |
+| Lighthouse Accessibility | (pendiente) | | |
 
 ## Riesgos y Mitigaciones
 - Reestructuración i18n: riesgo de claves rotas → test paridad + fallback.
@@ -217,6 +217,7 @@ Tareas:
 
 ## Checklist Global de Pasos
 - [ ] 0
+  - [x] 0.A (Docker ajustes + baseline)
 - [ ] 1
 - [ ] 2
 - [ ] 3
