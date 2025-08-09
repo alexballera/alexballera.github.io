@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:20-slim
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -9,11 +9,16 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Variables de entorno recomendadas
+ENV NODE_ENV=development \
+    TZ=UTC \
+    SHARP_IGNORE_GLOBAL_LIBVIPS=1
+
 # Copiar archivos de dependencias
 COPY package.json package-lock.json* ./
 
-# Instalar dependencias
-RUN npm install
+# Instalar dependencias (usar npm ci si existe lockfile para reproducibilidad)
+RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
 # Copiar el código fuente
 COPY . .

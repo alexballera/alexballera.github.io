@@ -1,14 +1,24 @@
+########################################
+# DOCKER BUILD CONTEXT IGNORE LIST     #
+# Optimiza el tamaño y caching de capas #
+########################################
+
 # Dependencias y módulos
 node_modules
-npm-debug.log
+npm-debug.log*
+yarn-error.log
+pnpm-debug.log*
 
-# Archivos de construcción
+# Archivos de construcción / cache
 dist
 .astro
+.cache
+coverage
 
 # Archivos de entorno y configuración local
 .env
 .env.local
+.env.*.local
 
 # Archivos del sistema y editores
 .DS_Store
@@ -21,6 +31,10 @@ dist
 .git
 .gitignore
 
-# Otros archivos temporales
+# Logs / temporales
 *.log
 *.tmp
+*.pid
+
+# Otros
+OPTIMIZATION_NOTES*
