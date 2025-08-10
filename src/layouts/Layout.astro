@@ -79,6 +79,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     
   </head>
   <body class="overflow-x-hidden">
+    <a href="#main" class="skip-link fixed left-2 top-2 -translate-y-20 focus:translate-y-0 transition-all bg-black text-white px-4 py-2 rounded z-[1000] focus:outline-none focus:ring-2 focus:ring-mint-400">{lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
     <SpeedInsights/>
     <div class="blur-circle"></div>
     <div
@@ -88,13 +89,24 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     </div>
     <Header />
 
-    <div class="min-h-[85vh] ">
+    <main id="main" tabindex="-1" class="min-h-[85vh] focus:outline-none focus:ring-2 focus:ring-mint-400">
       <slot />
-    </div>
+    </main>
 
     <Footer />
     <script>
       import "../scripts/menu.js";
+      // Enfocar main al activar skip link via hash (caso navegadores que no auto scroll)
+      if (window.location.hash === '#main') {
+        const m = document.getElementById('main');
+        m && m.focus();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#main') {
+          const m = document.getElementById('main');
+          setTimeout(() => m && m.focus(), 0);
+        }
+      });
     </script>
   </body>
 </html>

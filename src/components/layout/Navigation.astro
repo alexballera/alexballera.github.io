@@ -37,8 +37,8 @@ const baseClasses = {
   nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
   link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
-  dropdown: "relative group flex items-center",
-  dropdownMenu: "absolute left-0 top-full hidden group-hover:block bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
+  dropdown: "relative flex items-center",
+  dropdownMenu: "absolute left-0 top-full hidden bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
   dropdownItem: "block px-4 py-2 text-sm hover:bg-mint-100 dark:hover:bg-zinc-700 transition-colors"
 } as const;
 ---
@@ -130,6 +130,36 @@ const baseClasses = {
     updateActiveLink();
     setupScrollSpy();
     window.addEventListener("hashchange", updateActiveLink);
+
+    // Dropdown accesible
+    const dropdownToggles = document.querySelectorAll('[data-dropdown-toggle="true"]');
+    dropdownToggles.forEach(toggle => {
+      const menuId = toggle.getAttribute('aria-controls');
+      const menu = menuId ? document.getElementById(menuId) : null;
+      if (!menu) return;
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      function toggleMenu() {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        expanded ? closeMenu() : openMenu();
+      }
+      toggle.addEventListener('click', (e) => { e.preventDefault(); toggleMenu(); });
+      toggle.addEventListener('keydown', (ev) => {
+        const e = ev as KeyboardEvent;
+        if (e.key === 'ArrowDown') { openMenu(); const first = menu.querySelector('a,button'); first && (first as HTMLElement).focus(); }
+        if (e.key === 'Escape') { closeMenu(); (toggle as HTMLElement).focus(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+      });
+      document.addEventListener('click', (e) => { if (!menu.contains(e.target as Node) && !toggle.contains(e.target as Node)) closeMenu(); });
+      document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeMenu(); });
+    });
   });
 </script>
 
@@ -144,24 +174,33 @@ const baseClasses = {
       if (!item) return null;
 
       if ('dropdown' in item) {
+        const menuId = `dropdown-${key}`;
         return (
           <div class={baseClasses.dropdown}>
-            <a
-              href={item.path}
-              class={baseClasses.link}
+            <button
+              type="button"
+              class={`${baseClasses.link} inline-flex items-center gap-1`}
               data-path={item.path}
-              aria-label={item.name}
-              aria-current={item.path === Astro.url.pathname ? 'page' : undefined}
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls={menuId}
+              data-dropdown-toggle="true"
             >
-              {item.name}
-            </a>
-            <div class={baseClasses.dropdownMenu}>
+              <span>{item.name}</span>
+              <span aria-hidden="true" class="text-xs">▾</span>
+            </button>
+            <div
+              id={menuId}
+              class={baseClasses.dropdownMenu + ' hidden'}
+              role="menu"
+              aria-label={item.name}
+            >
               {item.dropdown.map((dropdownItem) => (
                 <a
                   href={dropdownItem.path}
                   class={baseClasses.dropdownItem}
                   data-path={dropdownItem.path}
-                  aria-label={dropdownItem.name}
+                  role="menuitem"
                 >
                   {dropdownItem.name}
                 </a>

@@ -93,19 +93,16 @@ Verificación:
 
 ## Paso 5. Accesibilidad (Skip Link + Focus + Dropdown A11y)
 Tareas:
-- [ ] Agregar skip link en layout principal (`<a href="#main" class="skip-link">...</a>` oculto hasta focus).
-- [ ] Garantizar contenedor principal con `id="main"`.
-- [ ] Añadir estilos focus visibles (`focus-visible:ring ...`).
-- [ ] Convertir dropdown blog en botón accesible:
-  - `<button aria-haspopup="true" aria-expanded="false">`
-  - Toggle con teclado (Enter/Espacio, Escape para cerrar).
-  - Cerrar al hacer click fuera o esc.
-- [ ] Añadir atributos ARIA correctos (`role="menu"`, `role="menuitem"`).
+- [x] Agregar skip link en layout principal (`<a href="#main" class="skip-link">`...).
+- [x] Garantizar contenedor principal con `id="main"`.
+- [x] Añadir estilos focus visibles (outline personalizado) en `global.css`.
+- [x] Convertir dropdown blog en botón accesible (teclado: Enter, Space, Escape, ArrowDown focus primer item).
+- [x] Añadir atributos ARIA correctos (`aria-haspopup`, `aria-expanded`, `role=menu`, `role=menuitem`).
 Verificación:
-- [ ] Navegación sólo teclado funciona (Tab / Shift+Tab).
-- [ ] Build OK.
-- [ ] Git sync.
-- [ ] Commit (`feat(a11y): skip link and accessible dropdown`).
+- [x] Navegación sólo teclado funciona (probado manualmente en local).
+- [x] Build OK.
+- [x] Git sync.
+- [x] Commit (`feat(a11y): skip link and accessible dropdown`). (A ejecutar ahora)
 
 ## Paso 6. SEO (Canonical, hreflang, og locales)
 Tareas:
@@ -223,6 +220,8 @@ Tareas:
 - [x] 1
 - [x] 2
 - [x] 3
+- [x] 4
+- [x] 5
 - [ ] 4
 - [ ] 5
 - [ ] 6

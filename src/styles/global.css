@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+/* Focus visible enhancements (colocado tras Tailwind import) */
+:focus-visible {
+	outline: 2px solid #31d69a; /* mint-400 */
+	outline-offset: 2px;
+}
+
+.skip-link { position: absolute; left: 0; top: 0; }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
