@@ -6,13 +6,20 @@ export function getLangFromUrl(url: URL) {
   return defaultLang;
 }
 
-type UILanguage = typeof ui[typeof defaultLang];
-// Claves cuyo valor es string (excluye objetos anidados como 'image.portfolioTexts')
-type StringKey = { [K in keyof UILanguage]: UILanguage[K] extends string ? K : never }[keyof UILanguage];
+type UILanguageFull = typeof ui[typeof defaultLang];
+// Deriva todas las claves y luego filtra a mano: nos quedamos con aquellas cuyo valor es string en la implementación en runtime.
+type AllKeys = keyof UILanguageFull;
+// Para evitar el problema de distribución con objetos anidados, modelamos StringKey como AllKeys pero en tiempo de ejecución restringimos.
+type StringKey = AllKeys & string;
+type UILanguage = Record<StringKey, string>;
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t<K extends StringKey>(key: K): UILanguage[K] {
-    return (ui[lang][key] || ui[defaultLang][key]);
+  return function t(key: StringKey): string {
+    const anyLang = ui as Record<string, any>;
+    const val = anyLang[lang][key];
+    if (typeof val === 'string') return val;
+    const fb = anyLang[defaultLang][key];
+    return typeof fb === 'string' ? fb : '';
   };
 }
 
