@@ -1,37 +1,37 @@
 {
   "name": "front",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "scripts": {
-    "dev": "astro dev",
+  "dev": "astro dev",
   "build": "astro build",
   "build:check": "astro build && node scripts/check-stray-i.js",
     "preview": "astro preview",
-    "astro": "astro",
+  "astro": "astro",
   "lint": "eslint . --ext .js,.ts,.astro",
   "i18n:check": "node scripts/check-i18n.js",
   "test": "npm run i18n:check && vitest run",
   "test:watch": "vitest"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.1.0",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.1",
-    "@tailwindcss/vite": "^4.1.8",
+  "@astrojs/preact": "^4.1.0",
+  "@astrojs/rss": "^4.0.12",
+  "@astrojs/sitemap": "^3.4.2",
+  "@tailwindcss/vite": "^4.1.11",
   "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.9.2",
-    "astro-icon": "^1.1.5",
-    "preact": "^10.26.2",
-    "tailwindcss": "^4.1.8"
+  "astro": "^5.12.9",
+  "astro-icon": "^1.1.5",
+  "preact": "^10.27.0",
+  "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "eslint": "^9.22.0",
+  "eslint": "^9.33.0",
     "eslint-plugin-astro": "^1.3.1",
     "@typescript-eslint/parser": "^8.15.0",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
-    "sharp": "^0.34.2",
+  "sharp": "^0.34.3",
     "tailwindcss-animated": "^2.0.0",
-    "vitest": "^2.1.4",
-    "@types/node": "^22.5.5"
+  "vitest": "^2.1.4",
+  "@types/node": "^22.17.1"
   }
 }
