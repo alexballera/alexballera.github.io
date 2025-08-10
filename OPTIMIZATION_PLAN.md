@@ -18,13 +18,13 @@
 
 ## Paso 0. Preparación y Línea Base
 Tareas:
-- [ ] Confirmar entorno Node (recomendado LTS).
-- [ ] Ejecutar build inicial para asegurar estado limpio.
-- [ ] Registrar tamaño de salida `dist/` (número de archivos y tamaño total).
+- [x] Confirmar entorno Node (Node 20 LTS en Docker alineado).
+- [x] Ejecutar build inicial para asegurar estado limpio.
+- [x] Registrar tamaño de salida `dist/` (número de archivos y tamaño total).
 - [ ] (Opcional) Ejecutar Lighthouse local (anotar métricas Performance/Accessibility/SEO/Best Practices).
 - [ ] Crear tag opcional de referencia (`git tag baseline-opt && git push origin baseline-opt`).
 Verificación:
-- [ ] Build sin errores.
+- [x] Build sin errores.
 - [ ] Git sync con remoto antes de continuar.
 
 ### Paso 0.A Ajustes Docker Previos (Integrado)
@@ -33,49 +33,49 @@ Tareas:
 - [x] Actualizar Dockerfile a Node 20 + reproducibilidad (`npm ci`).
 - [x] Añadir variables de entorno útiles (TZ, SHARP_IGNORE_GLOBAL_LIBVIPS).
 - [x] Extender `.dockerignore` para reducir contexto de build.
-- [ ] Reconstruir imagen: `docker compose build`.
-- [ ] Iniciar entorno: `./docker-dev.sh start` (si no está corriendo).
-- [ ] Ejecutar build dentro del contenedor: `./docker-dev.sh build`.
-- [ ] Registrar métricas baseline (tamaño dist) post-homogeneización.
+- [x] Reconstruir imagen: `docker compose build`.
+- [x] Iniciar entorno: `./docker-dev.sh start` (si no está corriendo).
+- [x] Ejecutar build dentro del contenedor: `./docker-dev.sh build`.
+- [x] Registrar métricas baseline (tamaño dist) post-homogeneización.
 Verificación:
-- [ ] Imagen construida sin errores.
-- [ ] Build dentro de contenedor exitosa.
-- [ ] Anotadas métricas en tabla Métricas.
+- [x] Imagen construida sin errores.
+- [x] Build dentro de contenedor exitosa.
+- [x] Anotadas métricas en tabla Métricas.
 
 ## Paso 1. Crear Rama de Trabajo
 Tareas:
-- [ ] `git checkout -b feat/optimization-round1`
-- [ ] Confirmar estado limpio (`git status`).
+- [x] `git checkout -b feat/optimization-round1`
+- [x] Confirmar estado limpio (`git status`).
 Verificación:
-- [ ] Git sync (en nueva rama).
-- [ ] Build para asegurar no hay divergencias.
+- [x] Git sync (en nueva rama).
+- [x] Build para asegurar no hay divergencias.
 
 ## Paso 2. Corrección Navegación i18n (anchors + consistencia)
 Tareas:
-- [ ] Actualizar `Navigation.astro` para que enlaces con ancla incluyan prefijo de idioma (`/${lang}/#home` etc.).
-- [ ] Revisar otros componentes que generen anclas internas.
-- [ ] Añadir test manual navegando `/es/#home` y `/en/#home` (no redirección inesperada).
+- [x] Actualizar `Navigation.astro` para que enlaces con ancla incluyan prefijo de idioma (`/${lang}/#home` etc.).
+- [x] Revisar otros componentes que generen anclas internas.
+- [x] Añadir test manual navegando `/es/#home` y `/en/#home` (no redirección inesperada).
 Verificación:
-- [ ] Build OK.
-- [ ] (Si ya hay test infra) Añadir test de generación de ruta de ancla.
-- [ ] Git sync y resolver posibles conflictos.
-- [ ] Commit (`feat(nav): fix localized anchor links`).
+- [x] Build OK.
+- [ ] (Si ya hay test infra) Añadir test de generación de ruta de ancla. (Pendiente hasta Step 4)
+- [x] Git sync y resolver posibles conflictos.
+- [x] Commit (`feat(nav): fix localized anchor links`).
 Notas de progreso:
 - 2025-08-09: Actualizado Navigation.astro, build OK dentro de contenedor.
 
 ## Paso 3. Lint + Limpieza Dependencias
 Tareas:
-- [ ] Añadir script `"lint": "eslint ."` en `package.json`.
-- [ ] Crear/añadir `.eslintrc` (Astro + TypeScript).
-- [ ] Verificar si `alpinejs` se usa; si no, eliminar dependencia.
-- [ ] Verificar uso real de `prismjs` (Shiki ya activo). Si no usado, eliminar.
-- [ ] Ejecutar `npm prune` tras eliminar.
+- [x] Añadir script `"lint": "eslint . --ext .js,.ts,.astro"` en `package.json`.
+- [x] Configuración ESLint flat (Astro + TypeScript) añadida.
+- [x] Verificar si `alpinejs` se usa; eliminado.
+- [x] Verificar uso real de `prismjs`; eliminado.
+- [x] Ejecutar limpieza (dentro de contenedor) tras eliminar.
 Verificación:
-- [ ] `npm i` sin warnings críticos.
-- [ ] `npm run lint` pasa (o issues menores corregidos / auto-fix).
-- [ ] Build OK.
-- [ ] Git sync.
-- [ ] Commit (`chore(lint): add eslint and remove unused deps`).
+- [x] `npm i` sin warnings críticos.
+- [x] `npm run lint` pasa (0 errores tras ajustes de tipos / alias Capsule).
+- [x] Build OK.
+- [x] Git sync.
+- [x] Commit (`chore(lint): add eslint and remove unused deps`). (Pendiente de realizar ahora junto a este plan actualizado)
 
 ## Paso 4. Infra de Tests + Pruebas i18n
 Tareas:
@@ -206,9 +206,9 @@ Tareas:
 ## Métricas (rellenar)
 | Métrica | Baseline | Optimizado | Δ |
 |---------|----------|-----------|----|
-| Tamaño dist total | 3.5MB | | |
+| Tamaño dist total | 3.5MB | (igual tras Steps 1-3) | 0 |
 | Peso JS principal | ~12.35kB + 8.82kB (modules) | | |
-| Nº dependencias prod | 11 | | |
+| Nº dependencias prod | 11 | 9 | -2 |
 | Lighthouse Performance | (pendiente) | | |
 | Lighthouse Accessibility | (pendiente) | | |
 
@@ -220,9 +220,9 @@ Tareas:
 ## Checklist Global de Pasos
 - [ ] 0
   - [x] 0.A (Docker ajustes + baseline)
-- [ ] 1
-- [ ] 2
-- [ ] 3
+- [x] 1
+- [x] 2
+- [x] 3
 - [ ] 4
 - [ ] 5
 - [ ] 6

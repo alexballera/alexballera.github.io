@@ -1,5 +1,4 @@
 ---
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 interface Props {
   src: string;
@@ -10,8 +9,6 @@ interface Props {
 }
 
 const { src, alt, width, height, class: className = "" } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
 // Necesitamos añadir traducciones para los textos que aparecen en la imagen
 ---

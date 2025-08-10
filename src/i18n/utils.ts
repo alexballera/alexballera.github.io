@@ -1,4 +1,4 @@
-import { ui, defaultLang } from './ui';
+import { defaultLang, ui } from './ui';
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
@@ -6,10 +6,14 @@ export function getLangFromUrl(url: URL) {
   return defaultLang;
 }
 
+type UILanguage = typeof ui[typeof defaultLang];
+// Claves cuyo valor es string (excluye objetos anidados como 'image.portfolioTexts')
+type StringKey = { [K in keyof UILanguage]: UILanguage[K] extends string ? K : never }[keyof UILanguage];
+
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof typeof ui[typeof defaultLang]) {
-    return ui[lang][key] || ui[defaultLang][key];
-  }
+  return function t<K extends StringKey>(key: K): UILanguage[K] {
+    return (ui[lang][key] || ui[defaultLang][key]);
+  };
 }
 
 export function useTranslatedPath(lang: keyof typeof ui) {

@@ -4,14 +4,16 @@ import { getLanguage } from "../../utils/languages";
 import { getLangFromUrl } from '../../i18n/utils';
 
 interface Props {
-  name: string;
+  name?: string; // principal
+  lang?: string; // alias legacy usado en varias partes
   size?: "xs" | "md";
   linkEnabled?: boolean;
   variant?: "default" | "soft";
 }
-
-const { size = "md", name, linkEnabled = true, variant = "default" } = Astro.props as Props;
-const lang = getLangFromUrl(Astro.url);
+const { size = "md", name, lang: langProp, linkEnabled = true, variant = "default" } = Astro.props as Props;
+// Permitir que 'lang' actúe como alias de 'name'
+const finalName = (name || langProp || "").toString();
+const currentPageLang = getLangFromUrl(Astro.url);
 
 const baseClasses = {
   container: [
@@ -40,9 +42,9 @@ const sizeClasses = {
   md: "size-7",
 };
 
-const selectedLanguage = getLanguage(name);
+const selectedLanguage = getLanguage(finalName);
 // Usar nombre en inglés si existe y estamos en página en inglés
-const displayName = (lang === 'en' && selectedLanguage.nameEn) 
+const displayName = (currentPageLang === 'en' && selectedLanguage.nameEn) 
   ? selectedLanguage.nameEn 
   : selectedLanguage.name;
 
@@ -67,7 +69,7 @@ const getIconClasses = () => {
   linkEnabled ? (
     <a
       class="cursor-pointer"
-      href={`/blog/techs/${name}`}
+  href={`/blog/techs/${finalName}`}
       aria-label={`View articles about ${displayName}`}
       role="link"
     >
@@ -92,11 +94,7 @@ const getIconClasses = () => {
       role="presentation"
       aria-hidden="true"
     >
-      <div
-        class={getIconContainerClasses()}
-        role="img"
-        aria-label={`${displayName} icon`}
-      >
+  <div class={getIconContainerClasses()} role="img" aria-label={`${displayName} icon`}>
         <Icon class={getIconClasses()} name={selectedLanguage.iconName} />
       </div>
       {displayName}
