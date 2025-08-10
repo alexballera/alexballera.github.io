@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^8.15.0",
   "sharp": "^0.34.3",
     "tailwindcss-animated": "^2.0.0",
-  "vitest": "^2.1.4",
+  "vitest": "^3.2.4",
   "@types/node": "^22.17.1"
   }
 }
