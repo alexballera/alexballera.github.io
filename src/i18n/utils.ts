@@ -11,7 +11,7 @@ type UILanguageFull = typeof ui[typeof defaultLang];
 type AllKeys = keyof UILanguageFull;
 // Para evitar el problema de distribución con objetos anidados, modelamos StringKey como AllKeys pero en tiempo de ejecución restringimos.
 type StringKey = AllKeys & string;
-type UILanguage = Record<StringKey, string>;
+// Eliminado tipo UILanguage concreto para evitar warning de no-unused-vars; derivamos dinámico en runtime
 
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: StringKey): string {

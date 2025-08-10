@@ -6,6 +6,8 @@
  * Falla con exit(1) si detecta patrón inesperado ⇒ ayuda a identificar regresiones
  * del bug de minificación/transpilación (Astro 5.9.2 + Vite 6.3.5 + esbuild 0.25.0).
  */
+/* eslint-env node */
+/* global console, process */
 import { readFileSync, readdirSync, statSync } from 'fs';
 
 import { join } from 'path';

@@ -7,21 +7,22 @@
  *  - Falta una clave en algún idioma.
  *  - Hay claves extra (opcional: sólo warn por ahora).
  */
-// Intento 1: importar el TS directamente (Node 20 soporta importación de TS sólo si existe loader; normalmente fallará)
+/* eslint-env node */
+/* global Buffer, console, process */
 let uiModule;
 try {
   uiModule = await import('../src/i18n/ui.ts');
-} catch (e) {
-  // Intento 2: compilar on-the-fly con esbuild si está disponible
+} catch (err) {
   try {
     const { build } = await import('esbuild');
     const path = new URL('../src/i18n/ui.ts', import.meta.url).pathname;
     const result = await build({ entryPoints: [path], bundle: true, write: false, platform: 'node', format: 'esm' });
     const code = result.outputFiles[0].text;
-    uiModule = await import('data:text/javascript;base64,' + Buffer.from(code).toString('base64'));
-  } catch (e2) {
+  // Buffer usado para crear módulo inline
+  uiModule = await import('data:text/javascript;base64,' + Buffer.from(code).toString('base64'));
+  } catch (err2) {
     console.error('[i18n:check] No se pudo cargar ui.ts (intentos fallidos). Añade esbuild como devDependency si quieres compilación on-the-fly.');
-    console.error('Error original:', e2.message);
+    console.error('Error original:', (err2 && err2.message) || (err && err.message));
     process.exit(1);
   }
 }

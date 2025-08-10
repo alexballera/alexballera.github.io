@@ -2,6 +2,7 @@
 // Carga ligera: sólo se incluye en /, /es, /en páginas índice.
 
 (function(){
+  /* global IntersectionObserver */
   const path = window.location.pathname.replace(/\/$/, "");
   if(!(path === '' || path === '/en' || path === '/es')) return;
 
@@ -47,6 +48,7 @@
   function setupScrollSpy(){
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
+    if (typeof IntersectionObserver === 'undefined') return; // safety guard
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){

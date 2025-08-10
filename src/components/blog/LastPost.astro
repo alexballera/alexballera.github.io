@@ -5,7 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
 let allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
 // BUG_WORKAROUND_START (see Tags.astro) declarar 'i' para neutralizar instrucción suelta
-var i; // eslint-disable-line no-var
+var i; if (typeof i === 'undefined') { /* marcador */ }
 // BUG_WORKAROUND_END
 
 import Tag from "../ui/Tag.astro";

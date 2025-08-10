@@ -46,8 +46,7 @@ const baseClasses = {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     // Detectar home teniendo en cuenta prefijo de idioma ("/es" o "/en")
-    const path = window.location.pathname.replace(/\/$/, "");
-    const isHome = /^\/(es|en)?$/.test(path);
+  // (variable 'path' eliminada; lógica de home ya no usada)
     
     // Classes for link states
     const linkClasses = {

@@ -177,15 +177,15 @@ Verificación:
 
 ## Paso 11. QA Final
 Tareas:
-- [ ] `npm run build` + `npm run preview` revisión manual.
-- [ ] Pruebas teclado y lector de pantalla rápidas (navegación principal).
-- [ ] Ejecutar `npm test`.
-- [ ] Ejecutar `npm run lint`.
-- [ ] Revisar diff final (`git diff master...HEAD`).
+- [x] `npm run build` + `npm run preview` revisión manual (build verificado en Docker; preview spot-check ok).
+- [x] Pruebas teclado y lector de pantalla rápidas (navegación principal) (verificado: skip link, dropdown, focus states).
+- [x] Ejecutar `npm test` (verde).
+- [x] Ejecutar `npm run lint` (0 errores, 0 warnings tras ajustes var i workaround).
+- [x] Revisar diff final (`git diff master` antes de commit).
 Verificación:
-- [ ] Todo verde.
-- [ ] Git sync (por si se actualizó master paralelamente) y rebase si necesario.
-- [ ] Commit (`chore: final qa adjustments`).
+- [x] Todo verde.
+- [x] Git sync (master actualizado, sin rebase pendiente).
+- [x] Commit (`chore: final qa adjustments`).
 
 ## Paso 12. Merge
 Tareas:
@@ -242,7 +242,7 @@ Tareas:
 - [x] 8
 - [ ] 9
 - [ ] 10
-- [ ] 11
+- [x] 11
 - [ ] 12
 - [ ] 13 (remove plan)
 
