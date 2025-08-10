@@ -5,13 +5,9 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Cargar proyectos según el idioma
-let projects = [];
-if (lang === 'en') {
-  projects = await Astro.glob('../../pages/en/portfolio/*.md');
-} else {
-  projects = await Astro.glob('../../pages/es/portfolio/*.md');
-}
+// Cargar proyectos de ambos idiomas y filtrar
+const projectModules = import.meta.glob('../../pages/**/portfolio/*.md', { eager: true });
+let projects = Object.values(projectModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
 
 // Sort by descending date (most recent first)
 projects.sort(

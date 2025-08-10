@@ -130,16 +130,27 @@ Verificación:
 - [ ] Commit (`perf(step7): migrate glob imports & lazy scroll spy`).
 Notas: Se introdujo workaround temporal `var i;` en Tags/Languages/LastPost por artefacto de minificación (línea suelta `i;`). Investigar y eliminar en paso posterior.
 
-## Paso 8. Modularización Traducciones (Opcional si no se requiere ahora)
+## Paso 8. Modularización Traducciones
 Tareas:
-- [ ] Crear carpeta `src/i18n/segments/` (nav.ts, hero.ts, blog.ts, common.ts, etc.).
-- [ ] Reexportar en `ui.ts` un merge tipado.
-- [ ] Ajustar import en `utils.ts` si cambia ruta.
+- [x] Crear carpeta `src/i18n/segments/` (nav.ts, hero.ts, blog.ts, common.ts, etc.).
+- [x] Reexportar en `ui.ts` un merge tipado.
+- [x] Ajustar import en `utils.ts` si cambia ruta.
 Verificación:
-- [ ] Tests i18n verdes.
-- [ ] Build OK.
+- [x] Tests i18n verdes.
+- [x] Build OK.
 - [ ] Git sync.
 - [ ] Commit (`refactor(i18n): modularize translation segments`).
+
+## Paso 9. Script de Paridad de Traducciones
+Tareas:
+- [x] Crear script Node `scripts/check-i18n.js` que compara claves base (es) vs en.
+- [x] Añadir script npm `"i18n:check"`.
+- [x] Integrar en `npm test` antes de vitest.
+Verificación:
+- [ ] `npm run i18n:check` pasa en Docker.
+- [ ] Build OK.
+- [ ] Git sync.
+- [ ] Commit (`chore(i18n): add translation parity check`).
 
 ## Paso 9. Script de Paridad de Traducciones
 Tareas:
@@ -219,18 +230,16 @@ Tareas:
 - Eliminación de deps: riesgo import roto → buscar referencias antes (`grep`/`ripgrep`).
 
 ## Checklist Global de Pasos
-- [ ] 0
+- [x] 0
   - [x] 0.A (Docker ajustes + baseline)
 - [x] 1
 - [x] 2
 - [x] 3
 - [x] 4
 - [x] 5
-- [ ] 4
-- [ ] 5
 - [ ] 6
 - [ ] 7
-- [ ] 8 (opcional)
+- [x] 8
 - [ ] 9
 - [ ] 10
 - [ ] 11

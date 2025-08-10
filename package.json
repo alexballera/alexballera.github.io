@@ -8,9 +8,10 @@
   "build:check": "astro build && node scripts/check-stray-i.js",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint . --ext .js,.ts,.astro",
-    "test": "vitest run",
-    "test:watch": "vitest"
+  "lint": "eslint . --ext .js,.ts,.astro",
+  "i18n:check": "node scripts/check-i18n.js",
+  "test": "npm run i18n:check && vitest run",
+  "test:watch": "vitest"
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.0",

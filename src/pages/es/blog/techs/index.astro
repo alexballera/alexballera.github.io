@@ -4,7 +4,8 @@ import Languages from "../../../../components/blog/Languages.astro";
 import Heading from "../../../../components/ui/Heading.astro";
 
 const pageTitle = "Technologies"; // Fixed: Title was "Languages" but heading shows "Technologies"
-const allPosts = await Astro.glob("../posts/*.md") as any[];
+const modules = import.meta.glob('../posts/*.md', { eager: true });
+const allPosts = Object.values(modules) as any[];
 const languages = [
     ...new Set(allPosts.map((post) => post.frontmatter.languages || []).flat()),
 ];
