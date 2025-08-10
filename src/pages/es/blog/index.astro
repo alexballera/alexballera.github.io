@@ -3,10 +3,12 @@ import Layout from "../../../layouts/Layout.astro";
 import Hero from "../../../components/blog/Hero.astro";
 import Tags from "../../../components/blog/Tags.astro";
 import ListPosts from "../../../components/blog/ListPosts.astro";
+import blogImage from '../../../assets/images/blogimage.webp';
+
 const pageTitle = "Blog de Desarrollo Web y Tecnología | Alex Ballera";
 const description = "Bienvenido a mi blog, donde comparto mi pasión por el desarrollo frontend, diseño web y las últimas tendencias tecnológicas.";
 const ogimage ={
-    url: "/images/blogimage.webp",
+    url: blogImage.src,
     alt: "Blog de desarrollo web y tecnología de Alex Ballera."
 };
 ---

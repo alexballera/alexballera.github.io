@@ -5,7 +5,7 @@ pubDate: 2012-12-01
 description: 'Elaboración del plan de negocios y puesta en marcha de la Empresa Mixta Industria Tecnológica Arawak, S.A., dedicada a la transformación de productos de tecnología.'
 languages: ["Marketing", "Estrategia", "Finanzas", "Gerencia", "Emprendimiento"]
 image:
-  url: "/images/projects/arawak.webp"
+  url: "arawak.webp"
   alt: "Taller de ensamblaje de productos tecnológicos de Arawak."
 --- 
 

@@ -4,7 +4,9 @@ title: "Introducción al Desarrollo Web"
 pubDate: 2025-06-16
 description: "Aprende los conceptos básicos del desarrollo web y comienza tu viaje como desarrollador."
 author: "Alex Ballera"
-image: "/images/posts/markdown.webp" 
+image:
+  url: "markdown.webp"
+  alt: "Markdown logo" 
 tags: ["webdev", "principiantes", "html", "css"]
 languages: ["HTML", "CSS"]
 ---

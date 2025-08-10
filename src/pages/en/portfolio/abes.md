@@ -5,7 +5,7 @@ pubDate: 2004-01-01
 description: 'Launch of the Strategic Business Unit Social Benefits Administrator (ABES) to maximize shareholder benefits and strengthen the Pension Fund of the Venezuelan Armed Forces.'
 languages: ["Marketing", "Strategy", "Finance", "Management", "Entrepreneurship"]
 image:
-  url: "/images/projects/abes.webp"
+  url: "abes.webp"
   alt: "Electronic cards and money representing the pioneering ABES social benefits system implemented in 2004, 20 years ahead of modern digital payment solutions."
 --- 
 

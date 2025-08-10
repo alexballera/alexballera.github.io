@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "./Layout.astro";
 import DatePub from "../components/blog/DatePub.astro";
 import Tag from "../components/ui/Tag.astro";
@@ -8,16 +9,35 @@ import ListPosts from "../components/blog/ListPosts.astro";
 import NavigationArticles from "../components/layout/NavigationArticles.astro";
 import Share from "../components/ui/Share.astro";
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import profileImage from '../assets/images/alexprofile.webp';
+import Heading from "../components/ui/Heading.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const { frontmatter } = Astro.props;
+
+// Importar todas las imágenes de la carpeta de posts dinámicamente
+const postImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/posts/*.webp', { eager: true });
+
+// Función para encontrar la imagen correcta basada en el frontmatter
+const getPostImage = () => {
+  if (!frontmatter.image?.url) {
+    return null;
+  }
+  const imagePath = `/src/assets/images/posts/${frontmatter.image.url.split('/').pop()}`;
+  if (postImages[imagePath]) {
+    return postImages[imagePath].default;
+  }
+  return null;
+};
+
+const postImage = getPostImage();
+
 const currentUrl = `${Astro.site}${Astro.url.pathname}`;
 const tweetText = encodeURIComponent(
   `"${frontmatter.title}" - by ${frontmatter.author} | EFEELE`
 );
-import Heading from "../components/ui/Heading.astro";
 ---
 
 <script define:vars={{ copiedText: t('code.copied') }}>
@@ -34,13 +54,9 @@ import Heading from "../components/ui/Heading.astro";
 
     codeBlock.setAttribute("tabindex", "0");
 
-    // wrap codeblock with relative parent element
     if (codeBlock.parentNode) {
       codeBlock.parentNode.insertBefore(wrapper, codeBlock);
       wrapper.appendChild(codeBlock);
-
-      // Add the copy button to the wrapper instead of the codeBlock
-      // This ensures the button stays fixed relative to the code block container
       wrapper.appendChild(copyButton);
     }
 
@@ -52,14 +68,9 @@ import Heading from "../components/ui/Heading.astro";
   async function copyCode(block, button) {
     let code = block.querySelector("code");
     if (!code) return;
-
     let text = code.innerText;
-
     await navigator.clipboard.writeText(text);
-
-    // visual feedback that task is completed
     button.innerHTML = `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>&nbsp;${copiedText}`;
-
     setTimeout(() => {
       button.innerHTML = copyButtonLabel;
     }, 700);
@@ -71,59 +82,45 @@ import Heading from "../components/ui/Heading.astro";
   description={frontmatter.description}
   ogimage={frontmatter.image}
 >
-  <section
-    class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6"
-  >
+  <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
     <div class="w-64 max-xl:hidden"></div>
-    <article
-      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
-    >
+    <article class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border-neutral-100 rounded-2xl">
       <header class="flex flex-col gap-4" id="start">
         <div class="flex gap-2 flex-wrap">
-          {
-            frontmatter.languages.map((language: string) => (
-              <Capsule lang={language} />
-            ))
-          }
+          {frontmatter.languages.map((language: string) => <Capsule lang={language} />)}
         </div>
         <div class="gap-3 flex flex-wrap justify-start items-center">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag}>{tag}</Tag>)}
         </div>
         <DatePub date={frontmatter.pubDate} />
-
         <Heading text={frontmatter.title} />
-
-        <div
-          class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between"
-        >
+        <div class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between">
           <div class="white flex items-center gap-4">
             <div
               aria-label="Photo of Alex Ballera for the blog"
               class="size-10 bg-cover bg-center rounded-full drop-shadow-lg"
-              style="background-image: url(/images/alexprofile.webp);"
-            >
-            </div>
+              style={`background-image: url(${profileImage.src});`}
+            ></div>
             <a
               id={frontmatter.title}
               class="leading-0 text-sm font-semibold items-center gap-3 text-blacktext dark:text-riptide-50"
               href="/blog"
-              >{frontmatter.author}
-            </a>
+            >{frontmatter.author}</a>
           </div>
           <Share currentUrl={currentUrl} tweetText={tweetText} />
         </div>
       </header>
 
       <figure>
-        {
-          frontmatter.image?.url && (
-            <img
-              class="w-full rounded-xl"
-              src={frontmatter.image.url}
-              alt={frontmatter.image.alt || "Article image"}
-            />
-          )
-        }
+        {postImage && (
+          <Image
+            class="w-full rounded-xl"
+            src={postImage}
+            alt={frontmatter.image.alt || "Article image"}
+            width={800}
+            height={400}
+          />
+        )}
       </figure>
 
       <div class="markdown" id="content">
@@ -133,9 +130,7 @@ import Heading from "../components/ui/Heading.astro";
     </article>
     <NavArticle title={frontmatter.title} />
   </section>
-  <div
-    class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"
-  >
+  <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto">
     <div class="px-8">
       <NavigationArticles />
       <hr class="text-mint-300/50" />

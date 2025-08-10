@@ -1,12 +1,25 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "./Layout.astro";
 import DatePub from "../components/blog/DatePub.astro";
 import Capsule from "../components/ui/Capsule.astro";
 import Heading from "../components/ui/Heading.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
+
 const { frontmatter } = Astro.props;
 
+const projectImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*.webp', { eager: true });
+
+const getProjectImage = () => {
+  if (!frontmatter.image?.url) {
+    return null;
+  }
+  const imagePath = `/src/assets/images/projects/${frontmatter.image.url.split('/').pop()}`;
+  return projectImages[imagePath]?.default || null;
+};
+
+const projectImage = getProjectImage();
 ---
 
 
@@ -40,10 +53,10 @@ const { frontmatter } = Astro.props;
 
       <figure>
         {
-          frontmatter.image?.url && (
-            <img
+          projectImage && (
+            <Image
               class="w-full rounded-xl"
-              src={frontmatter.image.url}
+              src={projectImage}
               alt={frontmatter.image.alt || "Article image"}
             />
           )

@@ -4,7 +4,7 @@ title: "Alex Ballera | Senior Frontend Developer · MBA · Data Science Degree S
 description: "Goal-oriented Frontend Developer with 6+ years of experience. MBA graduate and Data Science degree student at UBA. 🚀☕"
 author: "Alex Ballera"
 image:
-  url: "/images/alexprofile.webp"
+  url: "alexprofile.webp"
   alt: "Photo of Alex Ballera - Senior Frontend Developer"
 ---
 

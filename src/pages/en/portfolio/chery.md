@@ -5,7 +5,7 @@ pubDate: 2012-02-01
 description: 'Launch of Chery dealership company in Venezuela, dedicated to the commercialization and after-sales service of vehicles.'
 languages: ["Marketing", "Strategy", "Finance", "Management", "Entrepreneurship"]
 image:
-  url: "/images/projects/chery.webp"
+  url: "chery.webp"
   alt: "Orange Chery vehicle."
 --- 
 

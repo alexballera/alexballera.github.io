@@ -1,6 +1,6 @@
 ---
 const {class: className} = Astro.props; 
-import { Icon } from "astro-icon/components";
+import Icon from "./Icon.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);

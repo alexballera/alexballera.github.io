@@ -5,7 +5,7 @@ pubDate: 2004-01-01
 description: 'Puesta en marcha de la Unidad Estratégica de Negocios Administradora de Beneficios Sociales (ABES) para maximizar el beneficio a los accionistas y fortalecer el Fondo de Pensiones de las Fuerzas Armadas de Venezuela.'
 languages: ["Marketing", "Estrategia", "Finanzas", "Gerencia", "Emprendimiento"]
 image:
-  url: "/images/projects/abes.webp"
+  url: "abes.webp"
   alt: "Tarjetas electrónicas y billetes representando el sistema pionero de beneficios sociales ABES implementado en 2004, adelantándose 20 años a soluciones modernas de pagos digitales."
 --- 
 

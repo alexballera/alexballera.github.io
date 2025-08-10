@@ -4,7 +4,7 @@ title: The Complete Markdown Guide
 author: Fernando López
 description: "A comprehensive guide to Markdown syntax, covering everything from basic formatting to advanced features. Learn how to create headers, lists, emphasis, and more with this essential markup language for content creation."
 image:
-  url: "/images/posts/markdown.webp"
+  url: "markdown.webp"
   alt: "Example of animated borders with Tailwind CSS in a dark design, featuring a vibrant color gradient background."
 pubDate: 2025-04-05
 tags:

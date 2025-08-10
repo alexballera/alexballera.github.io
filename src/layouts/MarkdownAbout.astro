@@ -1,16 +1,22 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "./Layout.astro";
-import { Icon } from "astro-icon/components";
+import Icon from "../components/ui/Icon.astro";
 import Heading from "../components/ui/Heading.astro";
 import Experience from "../components/portfolio/Experience.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import profileImg from "../..//public/images/alexprofile.webp";
+import profileImg from "../assets/images/alexprofile.webp";
 
 const { frontmatter } = Astro.props;
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.webp', { eager: true });
+const imageName = frontmatter.image.url.split('/').pop();
+const imagePath = `/src/assets/images/${imageName}`;
+const profileImg = allImages[imagePath]?.default;
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---

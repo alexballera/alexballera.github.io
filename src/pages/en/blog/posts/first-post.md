@@ -4,7 +4,9 @@ title: "Getting Started with Web Development"
 pubDate: 2025-06-16
 description: "Learn the basics of web development and start your journey as a developer."
 author: "Alex Ballera"
-image: "/images/posts/markdown.webp" 
+image:
+  url: "markdown.webp"
+  alt: "Markdown logo" 
 tags: ["webdev", "beginners", "html", "css"]
 languages: ["HTML", "CSS"]
 ---

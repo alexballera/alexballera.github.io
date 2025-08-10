@@ -5,7 +5,7 @@ pubDate: 2012-12-01
 description: 'Development of business plan and launch of Mixed Company Arawak Technological Industry, S.A., dedicated to the transformation of technology products.'
 languages: ["Marketing", "Strategy", "Finance", "Management", "Entrepreneurship"]
 image:
-  url: "/images/projects/arawak.webp"
+  url: "arawak.webp"
   alt: "Arawak's technology products assembly workshop."
 --- 
 

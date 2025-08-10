@@ -5,12 +5,26 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Cargar proyectos de ambos idiomas y filtrar
+// 1. Importar todas las imágenes de proyectos
+const projectImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/projects/*.webp', { eager: true });
+
+// 2. Cargar proyectos de ambos idiomas y filtrar
 const projectModules = import.meta.glob('../../pages/**/portfolio/*.md', { eager: true });
 let projects = Object.values(projectModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
 
-// Sort by descending date (most recent first)
-projects.sort(
+// 3. Mapear cada proyecto para incluir el objeto de imagen importado
+const projectsWithImages = projects.map((project) => {
+  const imageUrl = project.frontmatter.image?.url;
+  if (!imageUrl) return { ...project, loadedImage: null };
+
+  const imagePath = `/src/assets/images/projects/${imageUrl.split('/').pop()}`;
+  const loadedImage = projectImages[imagePath]?.default;
+  
+  return { ...project, loadedImage };
+});
+
+// 4. Ordenar por fecha descendente
+projectsWithImages.sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).getTime() -
     new Date(a.frontmatter.pubDate).getTime(),
@@ -27,7 +41,7 @@ projects.sort(
     class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
   >
     {
-      projects.map((post) => (
+      projectsWithImages.map((post) => (
         <Project
           url={post.url}
           title={post.frontmatter.title}
@@ -35,6 +49,7 @@ projects.sort(
           date={post.frontmatter.pubDate}
           languages={post.frontmatter.languages}
           image={post.frontmatter.image}
+          loadedImage={post.loadedImage}
         />
       ))
     }

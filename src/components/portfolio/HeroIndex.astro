@@ -1,12 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import Button from "../ui/Button.astro";
 import Heading from "../ui/Heading.astro";
 import Tools from "../portfolio/Tools.astro";
-import { Icon } from "astro-icon/components";
+import Icon from "../ui/Icon.astro";
 import Hobbies from "../portfolio/Hobbies.astro";
 import { AstroError } from "astro/errors";
 import { getCollection} from "astro:content";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import portfolioImage from '../../assets/images/portfolio.webp';
+import profileImage from '../../assets/images/alexprofile.webp';
 
 const [staticData] = await getCollection('staticData');
 
@@ -40,7 +43,7 @@ const t = useTranslations(lang);
           <div class="relative z-20 flex w-full rounded-full bg-mint-900">
             <div
               class="w-full aspect-square rounded-full bg-center bg-cover"
-              style={`background-image: url(${staticData.data.profileImage})`}
+              style={`background-image: url(${profileImage.src})`}
               aria-label={staticData.data.profileAlt}
             >
               <a
@@ -110,7 +113,7 @@ const t = useTranslations(lang);
     </div>
 
     <div
-      class="col-start-1 row-start-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] z-40 md:col-start-3"
+      class="col-start-1 row-start-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] z-40 md:col-start-3"
     >
       <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900">
         <div
@@ -182,9 +185,9 @@ const t = useTranslations(lang);
         >
           {t('projects.description')}
         </p>
-        <img
+        <Image
           class="relative left-0 z-0 mt-40 w-full object-cover transition-all ease-in-out duration-500 group-hover:rotate-2 group-hover:scale-185 max-xl:mt-28 max-lg:mt-10 max-sm:mt-0 max-md:scale-100 max-sm:scale-125 scale-180 max-md:group-hover:scale-105 before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:absolute before:left-30 before:-bottom-0 before:h-[80%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition"
-          src={staticData.data.portfolioImage}
+          src={portfolioImage}
           alt={t('projects.imageAlt')}
           data-behindcode={lang === 'es' ? 'Detrás del Código' : 'Behind The Code'}
           data-findexpert={lang === 'es' ? 'ENCUENTRA AL EXPERTO IDEAL PARA TU EVENTO' : 'FIND THE IDEAL EXPERT FOR YOUR EVENT'}

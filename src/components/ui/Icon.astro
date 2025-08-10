@@ -1,0 +1,31 @@
+---
+// src/components/ui/Icon.astro
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className, ...attrs } = Astro.props;
+
+/**
+ * Importa todos los iconos SVG de la carpeta `src/icons` de forma síncrona.
+ * `import.meta.glob` con `{ eager: true }` devuelve un objeto donde la clave
+ * es la ruta del módulo y el valor es el módulo exportado.
+ *
+ * @see https://docs.astro.build/es/guides/images/#importar-múltiples-imágenes-con-astroglob
+ */
+const icons = import.meta.glob<{ default: any }>('/src/icons/*.svg', { eager: true });
+
+const iconPath = `/src/icons/${name}.svg`;
+const iconModule = icons[iconPath];
+
+if (!iconModule) {
+  console.error(`Icono no encontrado: ${name}`);
+  return null; // No renderizar nada si el icono no se encuentra
+}
+
+const { default: IconComponent } = iconModule;
+---
+<IconComponent class:list={[className]} {...attrs} />

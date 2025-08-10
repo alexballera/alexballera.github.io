@@ -4,6 +4,7 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 import { getLangFromUrl, useTranslations, getRouteFromUrl } from "../i18n/utils";
+import defaultImage from '../assets/images/imagedefault.webp';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,7 +14,7 @@ const {
   pageTitle = t('site.title'),
   description = t('site.description'),
   ogimage = {
-    url: "/images/imagedefault.webp",
+    url: defaultImage.src,
     alt: t('site.imageAlt'),
   },
 } = Astro.props;

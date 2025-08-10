@@ -4,6 +4,7 @@ import Hero from "../../../components/blog/Hero.astro";
 import Tags from "../../../components/blog/Tags.astro";
 import ListPosts from "../../../components/blog/ListPosts.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import blogImage from '../../../assets/images/blogimage.webp';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,7 +12,7 @@ const t = useTranslations(lang);
 const pageTitle = `${t('blog.title')} | Fernando López | EFEELE`;
 const description = t('blog.subtitle');
 const ogimage ={
-    url: "/images/blogimage.webp",
+    url: blogImage.src,
     alt: "EFEELE.dev logo with green background and light effect. Text: 'Web Development and Technology Blog' and URL 'www.efeele.dev'."
 };
 ---

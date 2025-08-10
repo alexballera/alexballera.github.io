@@ -4,7 +4,7 @@ title: "Alex Ballera | Desarrollador Frontend Senior · MBA · Estudiante de Lic
 description: "Desarrollador Frontend orientado a objetivos con más de 6 años de experiencia. MBA y estudiante de Licenciatura en Ciencias de Datos en UBA. 🚀☕"
 author: "Alex Ballera"
 image:
-  url: "/images/alexprofile.webp"
+  url: "alexprofile.webp"
   alt: "Foto de Alex Ballera - Desarrollador Frontend Senior"
 ---
 

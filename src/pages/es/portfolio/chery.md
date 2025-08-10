@@ -5,7 +5,7 @@ pubDate: 2012-02-01
 description: 'Puesta en marcha de empresa concesionaria de Chery en Venezuela, dedicada a la comercialización y servicio post venta de vehículos.'
 languages: ["Marketing", "Estrategia", "Finanzas", "Gerencia", "Emprendimiento"]
 image:
-  url: "/images/projects/chery.webp"
+  url: "chery.webp"
   alt: "Vehículo Chery de color naranja."
 --- 
 
