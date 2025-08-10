@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "./Layout.astro";
 import { Icon } from "astro-icon/components";
 import Heading from "../components/ui/Heading.astro";
@@ -7,6 +8,7 @@ import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import profileImg from "../..//public/images/alexprofile.webp";
 
 const { frontmatter } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
@@ -24,7 +26,7 @@ const t = useTranslations(lang);
     <div class="w-64 max-xl:hidden"></div>
 
     <article
-      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
+      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border-neutral-100 rounded-2xl"
     >
       <div class="w-full h-auto mb-4 mx-auto" id="#">
         <div
@@ -39,15 +41,13 @@ const t = useTranslations(lang);
               >
               </div>
               <div class="relative z-20 flex w-full rounded-full bg-mint-900">
-                <div
-                  class="w-full aspect-square rounded-full bg-[url(/images/alexprofile.webp)] bg-center bg-cover"
-                  aria-label="Photo of Alex Ballera for the blog"
-                >
-                  <a
-                    href="/about-me"
-                    class="flex h-full w-full"
-                    aria-label="View about me page"></a>
-                </div>
+                <a href="/about-me" aria-label="View about me page">
+                  <Image
+                    src={profileImg}
+                    alt="Photo of Alex Ballera for the blog"
+                    class="w-full aspect-square rounded-full bg-center bg-cover"
+                  />
+                </a>
               </div>
             </div>
           </div>

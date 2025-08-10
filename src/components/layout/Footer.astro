@@ -38,19 +38,19 @@ const t = useTranslations(lang);
         ><Icon name="code" aria-hidden="true" /> {t('footer.madeWith')} <strong>{staticData.data.alias}</strong>, {t('footer.by')} Astro</a
       >
     </div>
-    <div class="flex items-center justify-center gap-5" role="list" aria-label="Social media links">
+    <ul class="flex items-center justify-center gap-5" aria-label="Social media links">
       {staticData.data.email && staticData.data.emailIconName && (
-        <Social link={`mailto:${staticData.data.email}`} iconName={staticData.data.emailIconName} label={`Send email to ${staticData.data.email}`} />
+        <li><Social link={`mailto:${staticData.data.email}`} iconName={staticData.data.emailIconName} label={`Send email to ${staticData.data.email}`} /></li>
       )}
       {staticData.data.linkedin && staticData.data.linkedinIconName && (
-        <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} label={`Visit ${staticData.data.alias} on LinkedIn`} />
+        <li><Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} label={`Visit ${staticData.data.alias} on LinkedIn`} /></li>
       )}
       {staticData.data.github && staticData.data.githubIconName && (
-        <Social link={staticData.data.github} iconName={staticData.data.githubIconName} label={`Visit ${staticData.data.alias} on GitHub`} />
+        <li><Social link={staticData.data.github} iconName={staticData.data.githubIconName} label={`Visit ${staticData.data.alias} on GitHub`} /></li>
       )}
       {staticData.data.kaggle && staticData.data.kaggleIconName && (
-        <Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} label={`Visit ${staticData.data.alias} on Kaggle`} />
+        <li><Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} label={`Visit ${staticData.data.alias} on Kaggle`} /></li>
       )}
-    </div>
+    </ul>
   </nav>
 </footer>

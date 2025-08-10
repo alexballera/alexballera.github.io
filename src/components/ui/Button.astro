@@ -151,7 +151,7 @@ const loadingAriaLabel = isLoading ? `${buttonAriaLabel} - Loading` : buttonAria
 >
     <a 
         class:list={[buttonClasses, className]} 
-        href={disabled ? '#' : link}
+        href={disabled ? undefined : link}
         aria-label={loadingAriaLabel}
         role="button"
         aria-disabled={disabled}

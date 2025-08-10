@@ -188,19 +188,18 @@ const baseClasses = {
     })
   }
   
-  <div 
+  <ul 
     class={baseClasses.socialContainer}
-    role="group"
     aria-label="Social Media Links"
   >
     {staticData.data.linkedin && staticData.data.linkedinIconName && (
-      <Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} />
+      <li><Social link={staticData.data.linkedin} iconName={staticData.data.linkedinIconName} /></li>
     )}
     {staticData.data.github && staticData.data.githubIconName && (
-      <Social link={staticData.data.github} iconName={staticData.data.githubIconName} />
+      <li><Social link={staticData.data.github} iconName={staticData.data.githubIconName} /></li>
     )}
     {staticData.data.kaggle && staticData.data.kaggleIconName && (
-      <Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} />
+      <li><Social link={staticData.data.kaggle} iconName={staticData.data.kaggleIconName} /></li>
     )}
-  </div>
+  </ul>
 </nav>
