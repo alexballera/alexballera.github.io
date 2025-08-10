@@ -110,6 +110,8 @@ npm test
 npm run i18n:check
 ```
 
+> Nota: El flujo preferido es mediante Docker (`./docker-dev.sh start`). Evitar usar `npm install` o comandos `npm run` directamente en entornos donde la paridad de dependencias sea crítica; dentro del contenedor se garantiza entorno controlado. Los comandos anteriores se listan solo como referencia local rápida.
+
 ## 📁 Estructura del Proyecto
 
 ```bash

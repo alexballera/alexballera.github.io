@@ -20,6 +20,7 @@
   - `npm install` to set up dependencies
   - `npm run dev` to start Astro locally (default: http://localhost:4321)
   - Use Docker for isolated development: `./docker-dev.sh start`
+  - Preferir Docker para mantener entorno consistente; evitar usar directamente `npm`/`yarn` fuera del contenedor salvo tareas puntuales de mantenimiento.
 - **Build & Preview:**
   - `npm run build` for production build
   - `npm run preview` to serve the built site locally

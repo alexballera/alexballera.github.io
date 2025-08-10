@@ -48,3 +48,6 @@ export const ui = {
     ...merged('en'),
   },
 } as const;
+
+// Tipo estricto de claves de traducción (solo strings de nivel superior actuales)
+export type TranslationKey = keyof typeof ui.es & string;
