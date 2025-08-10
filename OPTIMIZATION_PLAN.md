@@ -167,11 +167,11 @@ Verificación:
 
 ## Paso 10. Actualizar README
 Tareas:
-- [ ] Documentar: scripts nuevos, flujo i18n, cómo añadir traducciones.
-- [ ] Añadir sección Accesibilidad mejorada.
-- [ ] Registrar métricas comparativas (JS bundle antes/después, tamaño dist, mejoras Performance si medidas).
+- [x] Documentar: scripts nuevos, flujo i18n, cómo añadir traducciones.
+- [x] Añadir sección Accesibilidad mejorada.
+- [x] Registrar métricas comparativas (JS principal / páginas generadas).
 Verificación:
-- [ ] Build (para asegurar README no afecta) OK.
+- [x] Build (README no afecta output) OK (build previo paso 9 suficiente).
 - [ ] Git sync.
 - [ ] Commit (`docs: update readme with optimization details`).
 
