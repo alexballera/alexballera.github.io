@@ -6,113 +6,48 @@ export interface Language {
 }
 
 export const languages: Record<string, Language> = {
-  angular: {
-    name: "Angular",
-    iconName: "angular",
-  },
-  astro: {
-    name: "Astro",
-    iconName: "astro",
-  },
-  bootstrap: {
-    name: "Bootstrap",
-    iconName: "bootstrap",
-  },
-  html: {
-    name: "HTML 5",
-    iconName: "html",
-  },
-  javascript: {
-    name: "JavaScript",
-    iconName: "javascript",
-  },
-  nextjs: {
-    name: "Next.js",
-    iconName: "nextjs",
-  },
-  react: {
-    name: "React",
-    iconName: "react",
-  },
-  node: {
-    name: "Node.js",
-    iconName: "node",
-  },
-  tailwind: {
-    name: "Tailwind CSS",
-    iconName: "tailwind",
-  },
-  figma: {
-    name: "Figma",
-    iconName: "figma",
-  },
-  markdown: {
-    name: "Markdown",
-    iconName: "markdown",
-  },
-  python: {
-    name: "Python",
-    iconName: "python",
-    className: "bg-white dark:bg-zinc-800" // Ensure proper background for contrast
-  },
-  docker: {
-    name: "Docker",
-    iconName: "docker",
-    className: "bg-white dark:bg-zinc-800" // Docker icon needs proper background for contrast
-  },
-  sass: {
-    name: "Sass",
-    iconName: "sass",
-  },
-  sql: {
-    name: "SQL",
-    iconName: "sql",
-  },
-  ts: {
-    name: "TypeScript",
-    iconName: "typescript",
-  },
-  git: {
-    name: "Git",
-    iconName: "git",
-  },
-  css: {
-    name: "CSS",
-    iconName: "css",
-  },
-  vercel: {
-    name: "Vercel",
-    iconName: "vercel",
-  },
-  gatsby: {
-    name: "Gatsby",
-    iconName: "gatsby",
-  },
-  windsurf: {
-    name: "Windsurf",
-    iconName: "windsurf-logo",
-  },
-  cursor: {
-    name: "Cursor",
-    iconName: "cursor-ia",
-  },
-  deepseek: {
-    name: "DeepSeek",
-    iconName: "deepseek",
-  },
-  copilot: {
-    name: "GitHub Copilot",
-    iconName: "copilot",
-  },
-  chatgpt: {
-    name: "ChatGPT",
-    iconName: "chatgpt",
-  },
-  leadership: {
-    name: "Liderazgo",
-    nameEn: "Leadership",
-    iconName: "leadership",
-  },
+  angular: { name: "Angular", iconName: "angular" },
+  astro: { name: "Astro", iconName: "astro" },
+  bootstrap: { name: "Bootstrap", iconName: "bootstrap" },
+  html: { name: "HTML 5", iconName: "html" },
+  javascript: { name: "JavaScript", iconName: "javascript" },
+  nextjs: { name: "Next.js", iconName: "nextjs" },
+  "Next.js": { name: "Next.js", iconName: "nextjs" },
+  react: { name: "React", iconName: "react" },
+  React: { name: "React", iconName: "react" },
+  node: { name: "Node.js", iconName: "node" },
+  tailwind: { name: "Tailwind CSS", iconName: "tailwind" },
+  TailwindCSS: { name: "TailwindCSS", iconName: "tailwind" },
+  figma: { name: "Figma", iconName: "figma" },
+  markdown: { name: "Markdown", iconName: "markdown" },
+  python: { name: "Python", iconName: "python", className: "bg-white dark:bg-zinc-800" },
+  docker: { name: "Docker", iconName: "docker", className: "bg-white dark:bg-zinc-800" },
+  Docker: { name: "Docker", iconName: "docker", className: "bg-white dark:bg-zinc-800" },
+  sass: { name: "Sass", iconName: "sass" },
+  sql: { name: "SQL", iconName: "sql" },
+  ts: { name: "TypeScript", iconName: "typescript" },
+  TypeScript: { name: "TypeScript", iconName: "typescript" },
+  git: { name: "Git", iconName: "git" },
+  css: { name: "CSS", iconName: "css" },
+  vercel: { name: "Vercel", iconName: "vercel" },
+  gatsby: { name: "Gatsby", iconName: "gatsby" },
+  windsurf: { name: "Windsurf", iconName: "windsurf-logo" },
+  cursor: { name: "Cursor", iconName: "cursor-ia" },
+  deepseek: { name: "DeepSeek", iconName: "deepseek" },
+  copilot: { name: "GitHub Copilot", iconName: "copilot" },
+  chatgpt: { name: "ChatGPT", iconName: "chatgpt" },
+  // Tecnologías específicas rMotion
+  Zustand: { name: "Zustand", iconName: "zustand" },
+  zustand: { name: "Zustand", iconName: "zustand" },
+  Zusand: { name: "Zustand", iconName: "zustand" },
+  "React Query": { name: "React Query", iconName: "react-query" },
+  ReactQuery: { name: "React Query", iconName: "react-query" },
+  "TanStack Query": { name: "React Query", iconName: "react-query" },
+  "TanStack React Query": { name: "React Query", iconName: "react-query" },
+  Konva: { name: "Konva", iconName: "konva" },
+  Turbopack: { name: "Turbopack", iconName: "turbopack" },
+  turbopack: { name: "Turbopack", iconName: "turbopack" },
+  leadership: { name: "Liderazgo", nameEn: "Leadership", iconName: "leadership" },
   marketing: {
     name: "Marketing",
     nameEn: "Marketing", // Mismo en ambos idiomas
@@ -267,9 +202,15 @@ export const getLanguage = (lang: string | undefined): Language => {
     };
   }
   
-  // Si el idioma existe, devuélvelo
-  if (languages[lang]) {
-    return languages[lang];
+  // Coincidencia exacta
+  if (languages[lang]) return languages[lang];
+
+  // Búsqueda case-insensitive (normaliza claves)
+  const lower = lang.toLowerCase();
+  for (const key of Object.keys(languages)) {
+    if (key.toLowerCase() === lower) {
+      return languages[key];
+    }
   }
   
   // Si no existe, crea un idioma genérico basado en el nombre proporcionado
@@ -277,15 +218,15 @@ export const getLanguage = (lang: string | undefined): Language => {
   let iconName = "info";
   
   // Detectar si es una habilidad de negocios o técnica
-  if (lang.toLowerCase().includes("market") || 
-      lang.toLowerCase().includes("business") || 
-      lang.toLowerCase().includes("strateg") ||
-      lang.toLowerCase().includes("finance") || 
-      lang.toLowerCase().includes("management")) {
+  if (lang.toLowerCase().indexOf("market") !== -1 || 
+      lang.toLowerCase().indexOf("business") !== -1 || 
+      lang.toLowerCase().indexOf("strateg") !== -1 ||
+      lang.toLowerCase().indexOf("finance") !== -1 || 
+      lang.toLowerCase().indexOf("management") !== -1) {
     iconName = "briefcase";
-  } else if (lang.toLowerCase().includes("develop") || 
-             lang.toLowerCase().includes("code") || 
-             lang.toLowerCase().includes("program")) {
+  } else if (lang.toLowerCase().indexOf("develop") !== -1 || 
+             lang.toLowerCase().indexOf("code") !== -1 || 
+             lang.toLowerCase().indexOf("program") !== -1) {
     iconName = "code";
   }
   

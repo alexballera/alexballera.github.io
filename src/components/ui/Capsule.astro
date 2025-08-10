@@ -28,7 +28,7 @@ const baseClasses = {
   iconContainer: [
     "flex items-center justify-center",
     "aspect-square",
-    "bg-zinc-800 dark:bg-zinc-800 rounded-full p-1",
+  "bg-zinc-800 dark:bg-zinc-800 rounded-full p-1 text-white",
     "transition-all duration-300 ease-in-out",
   ].join(" "),
   soft: [
@@ -61,7 +61,7 @@ const getIconContainerClasses = () => {
 };
 
 const getIconClasses = () => {
-  return "w-full text-white transition-colors duration-300 ease-in-out group-hover:text-white";
+  return "w-full h-full text-white transition-colors duration-300 ease-in-out group-hover:text-white";
 };
 ---
 

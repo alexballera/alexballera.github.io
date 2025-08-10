@@ -281,3 +281,35 @@ a.inline-block.leading-5.pl-12{
 	filter: blur(10px);
 
 }
+
+/* -------- Markdown Table Styling (Accesible en modo claro/oscuro) -------- */
+.markdown table {
+	@apply w-full border-collapse my-10 text-left text-base overflow-hidden rounded-lg;
+}
+.markdown thead tr {
+	@apply border-b border-mint-400/40 dark:border-mint-300/30 bg-mint-100/40 dark:bg-mint-900/20;
+}
+.markdown thead th {
+	@apply px-4 py-3 font-semibold tracking-wide text-mint-800 dark:text-mint-200 text-sm uppercase;
+}
+.markdown tbody tr {
+	@apply border-b border-black/5 dark:border-white/5 transition-colors;
+}
+.markdown tbody tr:last-child {
+	@apply border-b-0;
+}
+.markdown tbody tr:nth-child(odd) {
+	@apply bg-mint-50/40 dark:bg-white/5;
+}
+.markdown tbody tr:hover {
+	@apply bg-mint-100/50 dark:bg-mint-800/30;
+}
+.markdown td {
+	@apply px-4 py-3 align-top text-blacktext dark:text-gray-200;
+}
+.markdown td code, .markdown th code {
+	@apply text-mint-600 dark:text-mint-300 font-mono text-sm;
+}
+
+/* Asegurar contraste cuando el texto por defecto quedaba negro en dark */
+.dark .markdown td, .dark .markdown th { color: theme('colors.gray.200'); }
