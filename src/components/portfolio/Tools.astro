@@ -31,7 +31,6 @@ const businessTools = [
 ];
 
 import Capsule from "../ui/Capsule.astro";
-import { getLangFromUrl } from '../../i18n/utils';
 
 type ToolVariant = "default" | "center";
 
@@ -45,7 +44,6 @@ const variantClasses: Record<ToolVariant, string> = {
 };
 
 const { variant = "default", linkEnabled = false, size = "md" } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
 
 // Combine base classes with variant-specific classes
 const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;

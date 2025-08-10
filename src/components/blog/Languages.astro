@@ -1,17 +1,22 @@
 ---
 import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
-// Split by language to avoid dynamic imports
-let allPosts = [];
-if (lang === 'en') {
-  allPosts = await Astro.glob('../../pages/en/blog/posts/*.md') as any[];
-} else {
-  allPosts = await Astro.glob('../../pages/es/blog/posts/*.md') as any[];
-}
+const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
+let allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
+// BUG_WORKAROUND_START: build inyecta 'i;' más tarde en chunk => declarar 'i' preemptivamente (Astro 5.9.2 + Vite 6.3.5 + esbuild 0.25.0)
+var i; if (typeof i === 'undefined') { /* marcador para evitar i; suelto */ }
+// BUG_WORKAROUND_END
 
-const languages = [
-    ...new Set(allPosts.map((post) => post.frontmatter.languages || []).flat()),
-].filter(Boolean);
+
+// Construir lista de lenguajes manualmente para evitar issues con .flat() en bundler
+const languageSet = new Set<string>();
+for (const post of allPosts as any[]) {
+    const arr = (post.frontmatter.languages || []) as string[];
+    for (const l of arr) {
+        if (l) languageSet.add(l);
+    }
+}
+const languages = Array.from(languageSet);
 import Capsule from "../ui/Capsule.astro";
 
 const { variant = "default" } = Astro.props;

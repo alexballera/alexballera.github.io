@@ -17,18 +17,19 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
+const langPrefix = `/${lang}`;
 const menu = {
-  about: { name: t('nav.about'), path: `/${lang}/about-me/` },
+  about: { name: t('nav.about'), path: `${langPrefix}/about-me/` },
   blog: { 
     name: t('nav.blog'), 
-    path: `/${lang}/blog/`,
+    path: `${langPrefix}/blog/`,
     dropdown: [
-      { name: t('blog.allPosts'), path: `/${lang}/blog/posts/` },
+      { name: t('blog.allPosts'), path: `${langPrefix}/blog/posts/` },
     ]
   },
-  home: { name: t('nav.home'), path: "/#home" },
-  experience: { name: t('nav.experience'), path: "/#experience" },
-  projects: { name: t('nav.projects'), path: "/#projects" },
+  home: { name: t('nav.home'), path: `${langPrefix}/#home` },
+  experience: { name: t('nav.experience'), path: `${langPrefix}/#experience` },
+  projects: { name: t('nav.projects'), path: `${langPrefix}/#projects` },
 };
 
 // Common base classes
@@ -36,15 +37,16 @@ const baseClasses = {
   nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
   link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
-  dropdown: "relative group flex items-center",
-  dropdownMenu: "absolute left-0 top-full hidden group-hover:block bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
+  dropdown: "relative flex items-center",
+  dropdownMenu: "absolute left-0 top-full hidden bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
   dropdownItem: "block px-4 py-2 text-sm hover:bg-mint-100 dark:hover:bg-zinc-700 transition-colors"
 } as const;
 ---
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const isHome = window.location.pathname === "/";
+    // Detectar home teniendo en cuenta prefijo de idioma ("/es" o "/en")
+  // (variable 'path' eliminada; lógica de home ya no usada)
     
     // Classes for link states
     const linkClasses = {
@@ -76,44 +78,54 @@ const baseClasses = {
         if (!path) return;
         
         const normalizedLinkPath = path.replace(/\/$/, '') || '/';
-        const isActive = normalizedLinkPath === normalizedCurrentPath || path === currentHash;
+        // Caso anclas: data-path tendrá formato "/{lang}/#section"; comparar hash + base
+        const isAnchor = path.includes('/#');
+        let isActive = normalizedLinkPath === normalizedCurrentPath || path === currentHash;
+        if (isAnchor) {
+          const [base, hash] = path.split('/#');
+            if (hash && currentHash === `#${hash}`) {
+              // Verificar que la base coincide con el inicio del currentPath (home con idioma)
+              const baseNormalized = base.replace(/\/$/, '');
+              isActive = baseNormalized === normalizedCurrentPath || currentHash === `#${hash}`;
+            }
+        }
         
         toggleLinkClasses(link, isActive);
       });
     }
 
-    function setupScrollSpy() {
-      if (!isHome) return;
-
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a");
-
-      const observerOptions = {
-        root: null,
-        rootMargin: "-50% 0px",
-        threshold: 0
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute("id");
-            if (sectionId) {
-              navLinks.forEach(link => {
-                const path = link.getAttribute("data-path");
-                toggleLinkClasses(link, path === `/#${sectionId}`);
-              });
-            }
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(section => observer.observe(section));
-    }
-
-    updateActiveLink();
-    setupScrollSpy();
+  updateActiveLink(); // Scroll spy delegado a script separable sólo en home
     window.addEventListener("hashchange", updateActiveLink);
+
+    // Dropdown accesible
+    const dropdownToggles = document.querySelectorAll('[data-dropdown-toggle="true"]');
+    dropdownToggles.forEach(toggle => {
+      const menuId = toggle.getAttribute('aria-controls');
+      const menu = menuId ? document.getElementById(menuId) : null;
+      if (!menu) return;
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+      function closeMenu() {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      function toggleMenu() {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        expanded ? closeMenu() : openMenu();
+      }
+      toggle.addEventListener('click', (e) => { e.preventDefault(); toggleMenu(); });
+      toggle.addEventListener('keydown', (ev) => {
+        const e = ev as KeyboardEvent;
+        if (e.key === 'ArrowDown') { openMenu(); const first = menu.querySelector('a,button'); first && (first as HTMLElement).focus(); }
+        if (e.key === 'Escape') { closeMenu(); (toggle as HTMLElement).focus(); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+      });
+      document.addEventListener('click', (e) => { if (!menu.contains(e.target as Node) && !toggle.contains(e.target as Node)) closeMenu(); });
+      document.addEventListener('keydown', (e)=> { if (e.key === 'Escape') closeMenu(); });
+    });
   });
 </script>
 
@@ -128,24 +140,33 @@ const baseClasses = {
       if (!item) return null;
 
       if ('dropdown' in item) {
+        const menuId = `dropdown-${key}`;
         return (
           <div class={baseClasses.dropdown}>
-            <a
-              href={item.path}
-              class={baseClasses.link}
+            <button
+              type="button"
+              class={`${baseClasses.link} inline-flex items-center gap-1`}
               data-path={item.path}
-              aria-label={item.name}
-              aria-current={item.path === Astro.url.pathname ? 'page' : undefined}
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls={menuId}
+              data-dropdown-toggle="true"
             >
-              {item.name}
-            </a>
-            <div class={baseClasses.dropdownMenu}>
+              <span>{item.name}</span>
+              <span aria-hidden="true" class="text-xs">▾</span>
+            </button>
+            <div
+              id={menuId}
+              class={baseClasses.dropdownMenu + ' hidden'}
+              role="menu"
+              aria-label={item.name}
+            >
               {item.dropdown.map((dropdownItem) => (
                 <a
                   href={dropdownItem.path}
                   class={baseClasses.dropdownItem}
                   data-path={dropdownItem.path}
-                  aria-label={dropdownItem.name}
+                  role="menuitem"
                 >
                   {dropdownItem.name}
                 </a>

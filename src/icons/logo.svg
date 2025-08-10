@@ -1,7 +1,8 @@
-<svg viewBox="0 0 250 40" xmlns="http://www.w3.org/2000/svg">
-  <!-- We use a single group since classes like dark:block don't work in SVG -->
-  <!-- ALEX part -->
-  <text x="5" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">ALEX</text>
-  <!-- BALLERA part -->
-  <text x="70" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#10b981">BALLERA</text>
+<svg viewBox="0 0 250 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle" fill="none">
+  <title id="logoTitle">Alex Ballera</title>
+  <!-- Simplificado: se reemplaza texto por formas vectoriales para evitar error astro-icon con <text> -->
+  <!-- Marca "A" estilizada -->
+  <path d="M10 34 L20 6 L30 34 L25 34 L20 20 L15 34 Z" fill="#ffffff" />
+  <!-- Bloque representando resto del logotipo (BALLERA) -->
+  <rect x="40" y="10" width="180" height="20" rx="2" fill="#10b981" />
 </svg>

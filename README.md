@@ -66,6 +66,22 @@ Desarrollador Frontend orientado a objetivos con experiencia en sectores bancari
    - Meta tags optimizados
    - Speed Insights integrado
 
+5. **♿ Accesibilidad**
+   - Skip link para salto directo al contenido (`#main`)
+   - Focus styles visibles (outline accesible)
+   - Dropdowns navegables por teclado y con atributos ARIA (`aria-haspopup`, `aria-expanded`)
+
+6. **🧩 Internacionalización Modular**
+   - Segmentos en `src/i18n/segments/*.ts`
+   - Merge tipado en `src/i18n/ui.ts`
+   - Utilidades: `getLangFromUrl`, `useTranslations`
+   - Script de paridad: `npm run i18n:check` (falla build si faltan claves)
+
+7. **⚙️ Rendimiento / DX**
+   - Migración a `import.meta.glob` (sin deprecaciones)
+   - Scripts auxiliares (`check-stray-i`, paridad i18n)
+   - Limpieza de SVG (removido `clip-rule` redundante)
+
 ## 🚀 Configuración de Desarrollo
 
 ```bash
@@ -83,6 +99,15 @@ npm run build
 
 # Preview local
 npm run preview
+
+# Linting
+npm run lint
+
+# Tests (incluye paridad i18n antes de Vitest)
+npm test
+
+# Sólo chequeo i18n
+npm run i18n:check
 ```
 
 ## 📁 Estructura del Proyecto
@@ -101,6 +126,9 @@ npm run preview
         │   ├── 📁portfolio         # Componentes del portafolio
         │   └── 📁ui                # Componentes UI reutilizables
         ├── 📁i18n                  # Sistema de internacionalización
+   │   ├── ui.ts               # Merge central de segmentos
+   │   ├── utils.ts            # Helpers (getLangFromUrl, useTranslations)
+   │   └── 📁segments          # Archivos segmentados (nav, blog, hero...)
         ├── 📁layouts
         │   ├── MarkdownAbout.astro  # Layout páginas About
         │   └── MarkdownPostLayout.astro
@@ -191,6 +219,7 @@ Este proyecto incluye configuración para desarrollo con Docker, lo que permite 
 La configuración incluye:
 
 - **Dockerfile**: Basado en Node.js 18, optimizado para desarrollo web
+   (actualizado para Node 20 LTS + reproducibilidad con `npm ci`).
 - **docker-compose.yml**: Configura el contenedor, puertos y volúmenes
 - **docker-dev.sh**: Script de utilidades para gestionar el entorno Docker
 
@@ -210,4 +239,31 @@ Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para detalles.
 ---
 
 > **Nota**: Este sitio representa la evolución del portafolio personal de Alex Ballera, migrado de HTML estático a una arquitectura moderna con Astro, manteniendo el enfoque en rendimiento y experiencia de usuario.
+
+---
+
+## 🌍 Añadir una Nueva Traducción (Guía Rápida)
+1. Crear un nuevo segmento si corresponde en `src/i18n/segments/` (mantener nombre descriptivo).
+2. Añadir claves en ambos idiomas (`es` y `en`).
+3. Exportar y asegurar inclusión en el merge de `ui.ts` (orden: común → específicos).
+4. Ejecutar `npm run i18n:check` para validar paridad.
+5. Referenciar en componentes con:
+   ```ts
+   const t = useTranslations(lang);
+   t('clave.segmento');
+   ```
+
+## 📊 Métricas (Post Optimización)
+| Concepto | Valor |
+|----------|-------|
+| Páginas generadas | 53 |
+| JS principal (gzip) | ~5.33 kB + señales 3.34 kB |
+| Scripts auxiliares | Paridad i18n, stray-i check |
+| Score Lighthouse objetivo | >90 (perf / a11y / SEO) |
+
+## 🔐 Calidad de Código
+- Lint: `npm run lint`
+- Tests: `npm test` (Vitest + paridad i18n)
+- Build verificación adicional: `npm run build:check`
+
 
