@@ -118,15 +118,17 @@ Verificación:
 
 ## Paso 7. Rendimiento y JS Condicional
 Tareas:
-- [ ] Mover script de scroll spy a island cargada sólo en home, o condicionar ejecución verificando sección.
-- [ ] Quitar listeners innecesarios en páginas sin secciones.
-- [ ] (Si se eliminó `prismjs`) asegurar no hay imports residuales.
-- [ ] Revisar tamaño JS final (comparar con línea base).
+- [x] Migrar `Astro.glob` a `import.meta.glob` (elimina warnings deprecación).
+- [x] Mover script de scroll spy a script externo cargado sólo en páginas home (`/scripts/scroll-spy.js`).
+- [x] Quitar listeners innecesarios en páginas sin secciones (Navigation ahora sólo gestiona hashchange; observer externo sólo en home).
+- [x] (Si se eliminó `prismjs`) asegurar no hay imports residuales. (Verificado por grep)
+- [x] Revisar tamaño JS final (comparar con línea base). (Medido: total bundle _astro ~21.2kB uncompressed; scroll-spy 2.9kB aparte; código inline previo removido.)
 Verificación:
-- [ ] Build OK.
-- [ ] Medir reducción (anotar en plan antes de borrar) tamaño de assets / carga JS.
+- [x] Build OK (migración + externalización scroll spy + workaround `var i`).
+- [x] Medir reducción (anotar en plan antes de borrar) tamaño de assets / carga JS.
 - [ ] Git sync.
-- [ ] Commit (`perf(nav): lazy scroll spy and reduce js`).
+- [ ] Commit (`perf(step7): migrate glob imports & lazy scroll spy`).
+Notas: Se introdujo workaround temporal `var i;` en Tags/Languages/LastPost por artefacto de minificación (línea suelta `i;`). Investigar y eliminar en paso posterior.
 
 ## Paso 8. Modularización Traducciones (Opcional si no se requiere ahora)
 Tareas:

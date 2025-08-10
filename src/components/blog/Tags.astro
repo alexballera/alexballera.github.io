@@ -1,17 +1,22 @@
 ---
 import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
-// Split by language to avoid dynamic imports
-let allPosts = [];
-if (lang === 'en') {
-  allPosts = await Astro.glob('../../pages/en/blog/posts/*.md') as any[];
-} else {
-  allPosts = await Astro.glob('../../pages/es/blog/posts/*.md') as any[];
-}
+const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
+const allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
 
 import Tag from "../ui/Tag.astro";
 
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags || []).flat())].filter(Boolean);
+// Construir set de tags de forma explícita para evitar artefactos de minificación
+// Workaround: declaración hoisted de 'i' para neutralizar referencia fantasma en bundle
+var i;
+const tagSet = new Set<string>();
+for (const post of allPosts as any[]) {
+    const tgs = (post.frontmatter?.tags ?? []) as any[];
+    for (const tg of tgs) {
+        if (tg) tagSet.add(String(tg));
+    }
+}
+const tags = Array.from(tagSet);
 type VariantType = "default" | "vertical" | "compact";
 const { variant = "default" } = Astro.props as { variant?: VariantType };
 

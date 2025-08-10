@@ -95,40 +95,7 @@ const baseClasses = {
       });
     }
 
-    function setupScrollSpy() {
-  if (!isHome) return;
-
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a");
-
-      const observerOptions = {
-        root: null,
-        rootMargin: "-50% 0px",
-        threshold: 0
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.getAttribute("id");
-            if (sectionId) {
-              navLinks.forEach(link => {
-                const path = link.getAttribute("data-path");
-                if (!path) return;
-                const anchorMatch = path.match(/\/#[^/]+$/);
-                const isSectionLink = anchorMatch && path.endsWith(`/#${sectionId}`);
-                toggleLinkClasses(link, Boolean(isSectionLink));
-              });
-            }
-          }
-        });
-      }, observerOptions);
-
-      sections.forEach(section => observer.observe(section));
-    }
-
-    updateActiveLink();
-    setupScrollSpy();
+  updateActiveLink(); // Scroll spy delegado a script separable sólo en home
     window.addEventListener("hashchange", updateActiveLink);
 
     // Dropdown accesible
