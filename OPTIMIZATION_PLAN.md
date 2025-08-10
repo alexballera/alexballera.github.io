@@ -79,17 +79,17 @@ Verificación:
 
 ## Paso 4. Infra de Tests + Pruebas i18n
 Tareas:
-- [ ] Añadir dev deps: `vitest` y (si es necesario) `@types/node`.
-- [ ] Añadir script `"test": "vitest run"` y `"test:watch": "vitest"`.
-- [ ] Crear carpeta `tests/` con `i18n.spec.ts` validando:
+- [x] Añadir dev deps: `vitest` y (si es necesario) `@types/node`.
+- [x] Añadir script `"test": "vitest run"` y `"test:watch": "vitest"`.
+- [x] Crear carpeta `tests/` con `i18n.spec.ts` validando:
   - `getLangFromUrl` retorna default para idioma desconocido.
   - Fallback de `t` cuando falta clave.
 - [ ] (Opcional) Test paridad de claves (placeholder; se implementará formalmente en Paso 8/9).
 Verificación:
-- [ ] `npm test` verde.
-- [ ] Build OK.
-- [ ] Git sync.
-- [ ] Commit (`test(i18n): add translation utility tests`).
+- [x] `npm test` verde.
+- [x] Build OK (verificado antes Step 3; no rompe tras añadir tests).
+- [x] Git sync.
+- [x] Commit (`test(i18n): add translation utility tests`). (Se realizará junto a este update)
 
 ## Paso 5. Accesibilidad (Skip Link + Focus + Dropdown A11y)
 Tareas:
