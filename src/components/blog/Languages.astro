@@ -3,10 +3,10 @@ import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
 let allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
+// BUG_WORKAROUND_START: build inyecta 'i;' más tarde en chunk => declarar 'i' preemptivamente (Astro 5.9.2 + Vite 6.3.5 + esbuild 0.25.0)
+var i; // eslint-disable-line no-var
+// BUG_WORKAROUND_END
 
-// Workaround: algunos builds inyectan una referencia suelta 'i;' -> declaramos 'i' para evitar ReferenceError
-// (seguir investigando origen; probable edge-case en minificación de set/for-of + destructuring)
-var i;
 
 // Construir lista de lenguajes manualmente para evitar issues con .flat() en bundler
 const languageSet = new Set<string>();

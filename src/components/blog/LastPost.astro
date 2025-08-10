@@ -4,9 +4,9 @@ const lang = getLangFromUrl(Astro.url);
 // Carga unificada de posts
 const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
 let allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
-// Workaround: build genera instrucción suelta `i;` provocando ReferenceError; declaramos 'i'
-// TODO: investigar raíz (posible bug de minificación). Eliminar cuando se resuelva.
-var i;
+// BUG_WORKAROUND_START (see Tags.astro) declarar 'i' para neutralizar instrucción suelta
+var i; // eslint-disable-line no-var
+// BUG_WORKAROUND_END
 
 import Tag from "../ui/Tag.astro";
 import ReadMore from "../ui/ReadMore.astro";

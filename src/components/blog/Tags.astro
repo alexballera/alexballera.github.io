@@ -3,12 +3,15 @@ import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const postModules = import.meta.glob('../../pages/**/blog/posts/*.md', { eager: true });
 const allPosts = Object.values(postModules).filter((m: any) => m && m.url && m.url.startsWith(`/${lang}/`));
+// BUG_WORKAROUND_START: Declaración para neutralizar instrucción suelta 'i;' inyectada por build (Astro 5.9.2 + Vite 6.3.5 + esbuild 0.25.0)
+// Referencia: reproducido sólo en componentes con import.meta.glob + filter + Set loop.
+// Eliminar cuando upstream solucione (abrir issue con chunk dist/chunks/Tags_*.mjs).
+var i; // eslint-disable-line no-var
+// BUG_WORKAROUND_END
 
 import Tag from "../ui/Tag.astro";
 
 // Construir set de tags de forma explícita para evitar artefactos de minificación
-// Workaround: declaración hoisted de 'i' para neutralizar referencia fantasma en bundle
-var i;
 const tagSet = new Set<string>();
 for (const post of allPosts as any[]) {
     const tgs = (post.frontmatter?.tags ?? []) as any[];
