@@ -202,6 +202,7 @@ Tareas:
 | Modularización i18n | | | |
 | Island vs inline script nav | | | |
 | Bug build 'i;' suelto | Mitigación local var i en Tags/Languages/LastPost + script check-stray-i | 2025-08-09 | Reportar a Astro (5.9.2 + Vite 6.3.5 + esbuild 0.25.0). |
+| Doc bug 'i;' | Informe añadido en docs/BUG_i stray astro build.md | 2025-08-09 | Servirá para issue upstream. |
 
 ## Métricas (rellenar)
 | Métrica | Baseline | Optimizado | Δ |
