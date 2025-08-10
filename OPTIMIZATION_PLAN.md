@@ -106,13 +106,13 @@ Verificación:
 
 ## Paso 6. SEO (Canonical, hreflang, og locales)
 Tareas:
-- [ ] En `Layout.astro` agregar lógica para `<link rel="alternate" hreflang="..." href="..."/>` para es/en.
-- [ ] Añadir `<link rel="canonical" ...>` dinámico.
-- [ ] Añadir `og:locale` y `og:locale:alternate`.
-- [ ] Verificar meta description multi-idioma (usar `t('site.description')`).
+- [x] En `Layout.astro` agregar lógica para `<link rel="alternate" hreflang="..." href="..."/>` para es/en.
+- [x] Añadir `<link rel="canonical" ...>` dinámico.
+- [x] Añadir `og:locale` y `og:locale:alternate`.
+- [x] Verificar meta description multi-idioma (usar `t('site.description')`).
 Verificación:
-- [ ] Build OK.
-- [ ] Validar en HTML generado (inspección en `dist/`).
+- [x] Build OK.
+- [x] Validar en HTML generado (inspección en `dist/`).
 - [ ] Git sync.
 - [ ] Commit (`feat(seo): hreflang canonical and og locale tags`).
 
