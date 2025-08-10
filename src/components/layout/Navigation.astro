@@ -131,7 +131,6 @@ const baseClasses = {
 
 <nav 
   class={baseClasses.nav}
-  role="navigation"
   aria-label="Main Navigation"
 >
   {
@@ -181,7 +180,6 @@ const baseClasses = {
           href={item.path}
           class={baseClasses.link}
           data-path={item.path}
-          aria-label={item.name}
           aria-current={item.path === Astro.url.pathname ? 'page' : undefined}
         >
           {item.name}
