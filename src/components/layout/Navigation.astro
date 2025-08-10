@@ -17,18 +17,19 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
+const langPrefix = `/${lang}`;
 const menu = {
-  about: { name: t('nav.about'), path: `/${lang}/about-me/` },
+  about: { name: t('nav.about'), path: `${langPrefix}/about-me/` },
   blog: { 
     name: t('nav.blog'), 
-    path: `/${lang}/blog/`,
+    path: `${langPrefix}/blog/`,
     dropdown: [
-      { name: t('blog.allPosts'), path: `/${lang}/blog/posts/` },
+      { name: t('blog.allPosts'), path: `${langPrefix}/blog/posts/` },
     ]
   },
-  home: { name: t('nav.home'), path: "/#home" },
-  experience: { name: t('nav.experience'), path: "/#experience" },
-  projects: { name: t('nav.projects'), path: "/#projects" },
+  home: { name: t('nav.home'), path: `${langPrefix}/#home` },
+  experience: { name: t('nav.experience'), path: `${langPrefix}/#experience` },
+  projects: { name: t('nav.projects'), path: `${langPrefix}/#projects` },
 };
 
 // Common base classes
@@ -44,7 +45,9 @@ const baseClasses = {
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const isHome = window.location.pathname === "/";
+    // Detectar home teniendo en cuenta prefijo de idioma ("/es" o "/en")
+    const path = window.location.pathname.replace(/\/$/, "");
+    const isHome = /^\/(es|en)?$/.test(path);
     
     // Classes for link states
     const linkClasses = {
@@ -76,14 +79,24 @@ const baseClasses = {
         if (!path) return;
         
         const normalizedLinkPath = path.replace(/\/$/, '') || '/';
-        const isActive = normalizedLinkPath === normalizedCurrentPath || path === currentHash;
+        // Caso anclas: data-path tendrá formato "/{lang}/#section"; comparar hash + base
+        const isAnchor = path.includes('/#');
+        let isActive = normalizedLinkPath === normalizedCurrentPath || path === currentHash;
+        if (isAnchor) {
+          const [base, hash] = path.split('/#');
+            if (hash && currentHash === `#${hash}`) {
+              // Verificar que la base coincide con el inicio del currentPath (home con idioma)
+              const baseNormalized = base.replace(/\/$/, '');
+              isActive = baseNormalized === normalizedCurrentPath || currentHash === `#${hash}`;
+            }
+        }
         
         toggleLinkClasses(link, isActive);
       });
     }
 
     function setupScrollSpy() {
-      if (!isHome) return;
+  if (!isHome) return;
 
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll("nav a");
@@ -101,7 +114,10 @@ const baseClasses = {
             if (sectionId) {
               navLinks.forEach(link => {
                 const path = link.getAttribute("data-path");
-                toggleLinkClasses(link, path === `/#${sectionId}`);
+                if (!path) return;
+                const anchorMatch = path.match(/\/#[^/]+$/);
+                const isSectionLink = anchorMatch && path.endsWith(`/#${sectionId}`);
+                toggleLinkClasses(link, Boolean(isSectionLink));
               });
             }
           }

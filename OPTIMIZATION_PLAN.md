@@ -60,6 +60,8 @@ Verificación:
 - [ ] (Si ya hay test infra) Añadir test de generación de ruta de ancla.
 - [ ] Git sync y resolver posibles conflictos.
 - [ ] Commit (`feat(nav): fix localized anchor links`).
+Notas de progreso:
+- 2025-08-09: Actualizado Navigation.astro, build OK dentro de contenedor.
 
 ## Paso 3. Lint + Limpieza Dependencias
 Tareas:
