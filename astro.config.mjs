@@ -25,7 +25,9 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
-  integrations: [preact(), icon(), sitemap({
+  integrations: [preact(), icon({
+    iconDir: 'src/assets/icons'
+  }), sitemap({
     filter: (page) =>
       !page.includes("/blog/tags") &&
       !page.includes("/blog/techs"),

@@ -4,14 +4,16 @@
   "version": "0.1.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
-    "build:check": "astro build && node scripts/check-stray-i.js",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.astro",
-    "i18n:check": "node scripts/check-i18n.js",
-    "test": "npm run i18n:check && vitest run",
-    "test:watch": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:i18n": "node scripts/check-i18n.js",
+    "check:stray": "node scripts/check-stray-i.js",
+    "validate": "npm run lint && npm run test && npm run check:i18n && npm run check:stray"
   },
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
@@ -20,6 +22,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.12.9",
+    "astro-icon": "^1.1.5",
     "preact": "^10.27.0",
     "tailwindcss": "^4.1.11"
   },
