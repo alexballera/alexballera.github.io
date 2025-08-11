@@ -13,8 +13,10 @@ if (!staticData) {
   throw new AstroError("JSON data not found");
 }
 
-// Always show all navigation items
-const navItems = ["home", "experience", "projects", "about", "blog"];
+// Navegación principal.
+// Blog oculto temporalmente hasta publicar primer post público en producción.
+// Para reactivarlo volver a añadir "blog" al array siguiente.
+const navItems = ["home", "experience", "projects", "about"]; // "blog" pendiente
 ---
 
 <header

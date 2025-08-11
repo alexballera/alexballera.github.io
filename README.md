@@ -258,6 +258,20 @@ Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para detalles.
 ## 📊 Métricas (Post Optimización)
 | Concepto | Valor |
 |----------|-------|
+
+---
+
+## 📝 TODO / Pendientes de Desarrollo
+
+### Blog
+El soporte de Blog (rutas `/[lang]/blog/`) está implementado pero el enlace del menú principal fue ocultado temporalmente (ver `src/components/layout/Header.astro`, array `navItems`).
+
+Acción pendiente: volver a incluir `"blog"` en `navItems` cuando se publique el primer post definitivo en producción. Verificar además:
+- Actualizar contenido inicial / teaser.
+- Revisar meta tags y OG image específica del primer post.
+- Revalidar índice multi-idioma y taxonomías (`/tags`, `/techs`).
+
+La IA que asista en futuras sesiones debería preguntar si el Blog ya tiene contenido público antes de optimizar navegación o SEO adicional.
 | Páginas generadas | 53 |
 | JS principal (gzip) | ~5.33 kB + señales 3.34 kB |
 | Scripts auxiliares | Paridad i18n, stray-i check |
